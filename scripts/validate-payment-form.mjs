@@ -13,6 +13,14 @@ assert(html.includes('netlify-honeypot="bot-field"'),"Honeypot missing");
 for(const field of ['customer-name','customer-email','requested-plan','privacy-acknowledgement']){
  assert(html.includes('name="'+field+'"'),"Required form field missing: "+field);
 }
+for(const [id,tag] of [['customer-business','input'],['customer-address','textarea'],['customer-message','textarea']]){
+ const element=html.split('\n').find(line=>line.includes('<'+tag+' ') && line.includes('id="'+id+'"'));
+ const label=html.split('\n').find(line=>line.includes('<label for="'+id+'">'));
+ assert(element && element.includes(' required>'),'Required payment field not enforced: '+id);
+ assert(label && label.includes('<span aria-hidden="true">*</span>'),'Required payment asterisk missing: '+id);
+ assert(!label.includes('(optional)'),'Required payment field mislabeled optional: '+id);
+}
+assert(!html.includes('Do not submit passwords, card numbers, bank details, IDs or patient medical information.'),'Obsolete warning still displayed');
 const ids=["voice-normal","voice-pro","voice-ultra-pro","website-starter","website-growth","website-pro"];
 for(const id of ids){
  assert(html.includes('href="#payment-request-form" data-plan="'+id+'"'),"Broken button: "+id);
