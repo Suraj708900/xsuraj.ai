@@ -110,11 +110,11 @@
                 <input type="text" id="customer-business" name="customer-business" autocomplete="organization" maxlength="150" placeholder="Business or organization">
               </div>
               <div class="payment-field">
-                <label for="customer-message">What does your business need? (optional)</label>
+                <label for="customer-address">Business / billing address (optional)</label><textarea id="customer-address" name="customer-address" autocomplete="street-address" rows="3" maxlength="500" placeholder="Street, city, state, postal code and country"></textarea></div><div class="payment-field"><label for="customer-message">What does your business need? (optional)</label>
                 <textarea id="customer-message" name="customer-message" rows="4" maxlength="1200" placeholder="Your industry, location, preferred website design or AI call needs"></textarea>
               </div>
               <label class="payment-agreement"><input type="checkbox" name="privacy-acknowledgement" value="agreed" required> <span>I understand this is a request, not a payment. My details will be used to reply about my quote, as explained in the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
-              <p class="payment-data-note">Do not submit passwords, card numbers, bank details, IDs or patient medical information.</p>
+              
               <button class="payment-form-submit" type="submit">Send payment details request <span aria-hidden="true">↗</span></button>
               <p class="payment-form-note">Website requests are handled through Netlify Forms when enabled on the deployed site. If submission is unavailable, use the Gmail/Outlook options alongside.</p>
             </form>
