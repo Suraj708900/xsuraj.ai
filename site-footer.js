@@ -56,6 +56,8 @@
           '<a href="/contact/">kamdevsuraj03@gmail.com</a>',
           '<p>Mahadev Asthan Paijawa, Patna, Bihar 800007, India</p>',
           '<a class="ast-contact-cta" href="/contact/?service=quote">Request a quote ↗</a>',
+          '<a href="/contact/?service=chat#google-connect-heading">Google Chat ↗</a>',
+          '<a href="/contact/?service=meet#google-meet-action">Google Meet ↗</a>',
         '</div>',
       '</div>',
       '<div class="ast-footer-bottom">',
@@ -107,6 +109,12 @@
     }
     if (/article|blog|tutorial|learn|seo|growth/.test(q)) {
       return ['Browse our 100 blog posts about local business websites, AI phone assistants, customer support, SEO and workflow automation.', '/blog/', 'Browse articles ↗'];
+    }
+    if (/google chat|chat message|chat with/.test(q)) {
+      return ['Open Google Chat and select New chat, then enter kamdevsuraj03@gmail.com. First-time messages may require approval. You can also request a Chat follow-up through our contact form.', '/contact/?service=chat#google-connect-heading', 'Contact via Google Chat ↗'];
+    }
+    if (/google meet|video call|video meeting|meet call|meeting/.test(q)) {
+      return ['Request a Google Meet video call with your preferred date, time and timezone. We will confirm your time by email; a meeting is not booked until confirmed.', '/contact/?service=meet#google-meet-action', 'Request a Google Meet ↗'];
     }
     if (/contact|email|support|founder|quote|help/.test(q)) {
       return ['Contact the founder via kamdevsuraj03@gmail.com. Share your business type and preferred service to request a quote.', '/contact/?service=quote', 'Send an email ↗'];

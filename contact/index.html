@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Request a Quote | AI Suraj Teach</title>
-  <meta name="description" content="Request a free written quote for business websites or AI voice receptionists. Contact AI Suraj Teach using a simple form, Gmail, or Outlook.">
+  <meta name="description" content="Request a free written quote for business websites or AI voice receptionists. Contact AI Suraj Teach with a quote form, Google Chat, Google Meet requests, Gmail, or Outlook.">
   <meta name="theme-color" content="#090e20">
   <link rel="canonical" href="https://xsurajteach.netlify.app/contact/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -27,8 +27,39 @@
       <div class="contact-wrap">
         <p class="contact-kicker">LET'S BUILD SOMETHING GREAT</p>
         <h1 id="contact-heading">Request a <span>free quote.</span></h1>
-        <p>Tell us what your business needs. Send your request right here—no email app required. Or open Gmail / Outlook with a ready-to-send message.</p>
+        <p>Tell us what your business needs. Send your request right here—no email app required. You can also contact us through Google Chat, ask for a Google Meet call, or open Gmail and Outlook.</p>
         <p class="contact-safe-note">A quote request is free. This page does not collect payments or credit card details.</p>
+      </div>
+    </section>
+
+    <section class="google-connect-section" aria-labelledby="google-connect-heading">
+      <div class="contact-wrap">
+        <div class="google-connect-heading">
+          <p class="contact-kicker">MORE WAYS TO CONNECT</p>
+          <h2 id="google-connect-heading">Google Chat <span>&amp;</span> Google Meet</h2>
+          <p>Choose written chat or request a video consultation for your website or AI receptionist project.</p>
+        </div>
+        <div class="google-connect-grid">
+          <article class="google-connect-card">
+            <span class="google-connect-icon" aria-hidden="true">💬</span>
+            <h3>Google Chat</h3>
+            <p>Open Google Chat, choose <strong>New chat</strong>, and search for <strong>kamdevsuraj03@gmail.com</strong>. You may need to sign in with a Google account and wait for us to accept your first message request.</p>
+            <div class="google-connect-actions">
+              <a id="open-google-chat" href="https://chat.google.com/" target="_blank" rel="noopener noreferrer">Open Google Chat ↗</a>
+              <button type="button" id="copy-google-chat-email">Copy Chat Email</button>
+            </div>
+            <p id="google-chat-copy-result" class="google-connect-feedback" role="status" aria-live="polite"></p>
+          </article>
+          <article class="google-connect-card">
+            <span class="google-connect-icon" aria-hidden="true">📹</span>
+            <h3>Google Meet</h3>
+            <p>Discuss website plans, live demos or AI receptionist needs by video. Request a suitable meeting time below. A meeting link is shared <strong>after confirmation</strong>, not automatically.</p>
+            <div class="google-connect-actions">
+              <a id="google-meet-action" href="/contact/?service=meet#quote-form">Request Google Meet Call ↗</a>
+            </div>
+            <p id="google-meet-status" class="google-connect-feedback">Meet booking link not connected yet. Send a meeting request and we will confirm by email.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -49,6 +80,8 @@
                 <option value="ai">AI voice receptionist</option>
                 <option value="website">Business website design</option>
                 <option value="demo">Request a 60-second demo</option>
+                <option value="chat">Contact via Google Chat</option>
+                <option value="meet">Request a Google Meet video call</option>
               </select>
             </div>
             <div class="contact-fields-two">
@@ -69,6 +102,11 @@
               <label for="quote-message">Project details <span aria-hidden="true">*</span></label>
               <textarea id="quote-message" name="message" maxlength="2000" rows="5" placeholder="Your business type, services needed, city/country, features and preferred plan" required></textarea>
             </div>
+            <div class="contact-field" id="google-meet-preference">
+              <label for="quote-meeting-time">Preferred Google Meet day, time and timezone (optional)</label>
+              <input id="quote-meeting-time" name="preferred-meeting-time" type="text" maxlength="160" placeholder="Example: Tuesday, 3 PM IST or Friday, 10 AM EST">
+              <p class="contact-small">This is a request, not a confirmed appointment. We will reply with the meeting details.</p>
+            </div>
             <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="agreed" required><span>I agree to be contacted about my request. See the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
             <p class="contact-warning">Do not include passwords, bank details, card numbers, or patient/medical information.</p>
             <button class="contact-submit" type="submit">Send my quote request <span aria-hidden="true">↗</span></button>
@@ -86,7 +124,7 @@
           <p id="quote-copy-result" class="contact-copy-result" role="status" aria-live="polite"></p>
           <div class="contact-info">
             <strong>How this works</strong>
-            <p>Select AI receptionist, website design, or demo. Fill in your details and either submit the form or open the prepared message in Gmail / Outlook.</p>
+            <p>Select AI receptionist, website design, Google Chat or Google Meet. Fill in your details and submit the form, or open the prepared message in Gmail / Outlook. For Google Chat, copy our email and start a chat in Google's app.</p>
           </div>
           <p class="contact-small">We never ask for your email password. This is a business inquiry, not a payment checkout.</p>
         </aside>
@@ -94,6 +132,7 @@
     </section>
   </main>
   <script src="/contact/contact.js" defer></script>
+  <script src="/contact/google-meet-booking.js" defer></script>
   <script src="/site-footer.js" defer></script>
 </body>
 </html>
