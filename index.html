@@ -25,6 +25,7 @@
   <link rel="alternate icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M22 18c-4 0-7 3-7 8 0 4 2 6 3 10 1 5 2 12 6 12 3 0 3-8 8-8s5 8 8 8c4 0 5-7 6-12 1-4 3-6 3-10 0-5-3-8-7-8-4 0-6 2-10 2s-6-2-10-2z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="premium-dark.css">
+  <link rel="stylesheet" href="payment.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -164,7 +165,7 @@
               <li>Appointment requests and FAQs</li>
               <li>Emergency routing</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="mailto:kamdevsuraj03@gmail.com?subject=Starter%20AI%20Receptionist%20Plan">Get started</a>
+            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="starter">Pay with PayPal</a>
           </article>
           <article class="plan plan-featured">
             <p class="badge">Recommended</p>
@@ -174,7 +175,7 @@
               <li>Up to 800 minutes per month</li>
               <li>Everything in Starter</li>
             </ul>
-            <a class="btn btn-primary btn-block" href="mailto:kamdevsuraj03@gmail.com?subject=Growth%20AI%20Receptionist%20Plan">Get started</a>
+            <a class="btn btn-primary btn-block" href="#payment" data-payment-plan="growth">Pay with PayPal</a>
           </article>
           <article class="plan">
             <h3>Pro</h3>
@@ -183,10 +184,30 @@
               <li>Up to 2,000 minutes per month</li>
               <li>Everything in Growth</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="mailto:kamdevsuraj03@gmail.com?subject=Pro%20AI%20Receptionist%20Plan">Get started</a>
+            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="pro">Pay with PayPal</a>
           </article>
         </div>
         <p class="on-request"><strong>Available on request</strong> (quoted separately, not included in the plans above): calendar booking, SMS confirmations, CRM integration, and weekly reports.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="payment" aria-labelledby="payment-title">
+      <div class="container narrow">
+        <h2 id="payment-title">Pay with PayPal</h2>
+        <p class="section-lead payment-intro">Choose your AI receptionist plan and review your first payment before continuing.</p>
+        <form class="payment-card" id="payment-form" action="/api/paypal-checkout" method="get">
+          <label for="payment-plan">Your plan</label>
+          <select id="payment-plan" name="plan" aria-describedby="payment-terms">
+            <option value="starter">Starter — $297/mo + $497 setup ($794 first payment)</option>
+            <option value="growth">Growth — $597/mo + $497 setup ($1,094 first payment)</option>
+            <option value="pro">Pro — $1,197/mo + $497 setup ($1,694 first payment)</option>
+          </select>
+          <p id="payment-terms">All prices are in USD. The first payment includes the one-time $497 setup fee and your first month. Review the amount and recipient on PayPal before paying. Future monthly payments are arranged separately; this button does not activate automatic billing.</p>
+          <button class="btn btn-paypal btn-block" type="submit" id="paypal-submit">Continue with PayPal</button>
+          <p class="payment-status" id="payment-status" role="status" aria-live="polite" hidden></p>
+          <p class="payment-help">Need help? <a href="mailto:kamdevsuraj03@gmail.com?subject=PayPal%20payment%20help">Contact Suraj for a payment link</a>.</p>
+          <noscript><p>The PayPal button works without JavaScript. If checkout is unavailable, the next page explains how to get help.</p></noscript>
+        </form>
       </div>
     </section>
 
@@ -297,5 +318,6 @@
     });
   })();
 </script>
+<script src="payment.js" defer></script>
 </body>
 </html>

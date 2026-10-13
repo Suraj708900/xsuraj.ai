@@ -1,0 +1,80 @@
+.payment-intro {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.payment-card {
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: linear-gradient(145deg, #131c38, #0b1228);
+  box-shadow: 0 10px 30px #03071366;
+}
+
+.payment-card label {
+  display: block;
+  margin-bottom: .65rem;
+  font-weight: 700;
+}
+
+.payment-card select {
+  width: 100%;
+  min-height: 48px;
+  padding: .85rem;
+  border: 1px solid #6377b2;
+  border-radius: 10px;
+  background: #0b1228;
+  color: #f4f6ff;
+  font: inherit;
+}
+
+.payment-card select:focus-visible {
+  outline: 3px solid #facc63;
+  outline-offset: 4px;
+}
+
+#payment-terms,
+.payment-help {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.btn-paypal {
+  margin-top: 1.25rem;
+  border: 1px solid #ffc439;
+  background: #ffc439;
+  color: #101b3b;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.btn-paypal:hover {
+  background: #ffdb7b;
+  color: #101b3b;
+}
+
+.btn-paypal:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.payment-status {
+  margin-top: 1rem;
+  padding: .85rem 1rem;
+  border: 1px solid #6377b2;
+  border-radius: 10px;
+  color: #f4f6ff;
+  overflow-wrap: anywhere;
+}
+
+.payment-status[data-error="true"] {
+  border-color: #ff9494;
+  color: #ffdada;
+}
+
+#payment {
+  scroll-margin-top: 90px;
+}
