@@ -51,7 +51,7 @@
 .ast-help-body { padding:15px 18px 12px; }
 .ast-help-intro { color:#dce4fc; margin:0 0 15px; font-size:13px; line-height:1.65; }
 .ast-help-questions { display:flex; gap:8px; flex-wrap:wrap; }
-.ast-help-questions button { border:1px solid #556aa5; background:#19284f; border-radius:999px; color:#e6e9ff; padding:7px 10px; cursor:pointer; font:600 11px/1.3 inherit; }
+.ast-help-questions button { border:1px solid #556aa5; background:#19284f; border-radius:999px; color:#e6e9ff; padding:7px 10px; cursor:pointer; font-size:11px;font-weight:600;line-height:1.3;font-family:inherit; }
 .ast-help-questions button:hover { background:#283963; }
 .ast-help-answer { margin:16px 0 3px; padding:12px 13px; color:#e6ebff; font-size:13px; line-height:1.65; background:#0a1329; border:1px solid #30436a; border-radius:10px; min-height:65px; overflow-wrap:anywhere; }
 .ast-help-answer a { color:#b5b9ff; display:inline-block; font-weight:750; }
