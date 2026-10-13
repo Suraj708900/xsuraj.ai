@@ -14,13 +14,23 @@
     quote: "General business quote",
     ai: "AI voice receptionist",
     website: "Business website design",
-    demo: "60-second demo request"
+    demo: "60-second demo request",
+    chat: "Google Chat contact request",
+    meet: "Google Meet video call request"
   };
 
   try {
     const requested = new URLSearchParams(window.location.search).get("service");
     if (Object.prototype.hasOwnProperty.call(allowedServices, requested)) {
       service.value = requested;
+    }
+    if (requested === "chat") {
+      const message = document.getElementById("quote-message");
+      if (message && !message.value.trim()) message.value = "I would like to connect via Google Chat. Please confirm your Google Chat availability and how I can reach you.";
+    }
+    if (requested === "meet") {
+      const message = document.getElementById("quote-message");
+      if (message && !message.value.trim()) message.value = "I would like to schedule a Google Meet video call about your services. Please email me an invitation after confirming the meeting time.";
     }
     const templateId = Number(new URLSearchParams(window.location.search).get("template"));
     if (Number.isInteger(templateId) && templateId >= 1 && templateId <= 60) {
@@ -39,7 +49,9 @@
 
   function updateDrafts() {
     const type = service.value;
-    const subject = type === "demo" ? "Demo request - AI Suraj Teach"
+    const subject = type === "meet" ? "Google Meet call request - AI Suraj Teach"
+      : type === "chat" ? "Google Chat contact request - AI Suraj Teach"
+      : type === "demo" ? "Demo request - AI Suraj Teach"
       : type === "ai" ? "Quote request - AI receptionist"
       : type === "website" ? "Quote request - business website"
       : "Quote request - AI Suraj Teach";
@@ -51,6 +63,7 @@
       "Name: " + field("quote-name"),
       "Email: " + field("quote-email"),
       "Business: " + field("quote-business"),
+      "Preferred meeting time and timezone: " + field("quote-meeting-time"),
       "",
       "My requirements:",
       field("quote-message"),
@@ -67,6 +80,20 @@
   form.addEventListener("input", updateDrafts);
   form.addEventListener("change", updateDrafts);
   updateDrafts();
+
+  const chatCopy = document.getElementById("copy-google-chat-email");
+  const chatResult = document.getElementById("google-chat-copy-result");
+  if (chatCopy && chatResult) {
+    chatCopy.addEventListener("click", async () => {
+      try {
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") throw new Error("Clipboard not supported");
+        await navigator.clipboard.writeText(recipient);
+        chatResult.textContent = "Copied " + recipient + ". Open Google Chat → New chat → paste this email.";
+      } catch {
+        chatResult.textContent = "Copy this address manually: " + recipient + ". In Google Chat, select New chat.";
+      }
+    });
+  }
 
   const copy = document.getElementById("quote-copy-email");
   const result = document.getElementById("quote-copy-result");
