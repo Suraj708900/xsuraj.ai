@@ -1,33 +1,32 @@
 # PayPal payment setup
 
-## Current mode: payment link requests
+## How payments work
 
-Until the PayPal links below are ready, the payment section on the home page is a Netlify Forms request form named `payment-request`. Customers choose a plan and leave their name, email, business name, and optional phone and message. Submissions appear under **Forms** in the Netlify project dashboard (turn on email notifications there). Reply to each request with the PayPal payment link for the chosen plan.
+The **Pay & get started** section on the home page (`#payment`) lists every item with a **Pay with PayPal** button. Each button opens `/api/paypal-checkout?plan=<item>` (`netlify/functions/paypal-checkout.mts`), which redirects the customer straight to PayPal checkout. Payments go to the PayPal account `kamdevsuraj03@gmail.com` in USD. Customers can pay with a PayPal account or a card.
 
-To switch to direct online checkout later, set the environment variables below and point the payment form back to `/api/paypal-checkout`. The checkout function is still in `netlify/functions/paypal-checkout.mts`.
+| Button | `plan` | Amount (USD) | Optional override variable |
+| --- | --- | --- | --- |
+| Launch offer (until 14 Oct 2026) | `launch` | $1,587 | `PAYPAL_LAUNCH_PAYMENT_LINK` |
+| AI voice receptionist setup fee | `voice-setup` | $497 | `PAYPAL_VOICE_SETUP_PAYMENT_LINK` |
+| Website Starter setup | `web-starter` | $297 | `PAYPAL_WEB_STARTER_PAYMENT_LINK` |
+| Website Growth setup | `web-growth` | $597 | `PAYPAL_WEB_GROWTH_PAYMENT_LINK` |
+| Website Pro setup | `web-pro` | $1,197 | `PAYPAL_WEB_PRO_PAYMENT_LINK` |
+| Custom amount / invoice | `custom` | Customer enters the amount | `PAYPAL_CUSTOM_PAYMENT_LINK` |
+| AI receptionist Starter, setup + first month | `starter` | $794 | `PAYPAL_STARTER_PAYMENT_LINK` |
+| AI receptionist Growth, setup + first month | `growth` | $1,094 | `PAYPAL_GROWTH_PAYMENT_LINK` |
+| AI receptionist Pro, setup + first month | `pro` | $1,694 | `PAYPAL_PRO_PAYMENT_LINK` |
 
-## Direct checkout (for later)
+The last three are not shown as buttons on the site, but the endpoint still supports them for direct links in emails.
 
-The AI receptionist pricing buttons open the payment section and select the chosen plan. The checkout endpoint redirects customers to a PayPal payment link configured by the site owner. It does not guess the receiving account from the contact email.
+After paying, PayPal sends the customer back to `/payment-thanks/`. If they cancel, they return to `/#payment`.
 
-## Enable live payments
+## Optional: use your own PayPal-hosted links
 
-Create a separate hosted payment link for each plan in the receiving business's PayPal account. Use USD and include the $497 setup fee plus the first month:
+By default, the function builds a standard PayPal checkout link from the recipient email and amount. To use a PayPal-hosted checkout link you create instead, set the matching variable above in the Netlify environment variable settings, with Functions scope, then redeploy. Only HTTPS links on `paypal.com`, `www.paypal.com`, `paypal.me`, and `www.paypal.me` are accepted. Invalid values fall back to the default checkout. Never paste passwords, API secrets, or access tokens into these settings.
 
-| Plan | First payment | Netlify environment variable |
-| --- | --- | --- |
-| Starter | $794 | `PAYPAL_STARTER_PAYMENT_LINK` |
-| Growth | $1,094 | `PAYPAL_GROWTH_PAYMENT_LINK` |
-| Pro | $1,694 | `PAYPAL_PRO_PAYMENT_LINK` |
+## Before going live
 
-In Netlify's project environment variable settings, set each variable to the corresponding PayPal-hosted checkout link, with Functions scope in the deployment contexts where payments should be available. Redeploy after changing the configuration. Do not paste passwords, API secrets, or access tokens into these settings or the repository; these variables need only the shareable checkout URLs.
+- Make sure the PayPal account `kamdevsuraj03@gmail.com` exists and can receive payments. If the email has no PayPal account, PayPal holds the money until an account is created with that email.
+- Click each button and check the recipient, item name, and amount on PayPal before approving a test payment.
 
-Use fixed-price links with the correct recipient, USD currency, and a quantity of one. Ensure the final total matches the table, including any checkout settings that could change it. The function accepts HTTPS links on `paypal.com`, `www.paypal.com`, `paypal.me`, and `www.paypal.me` only. Prefer fixed-price hosted checkout links over editable PayPal.Me requests.
-
-When a link is missing or invalid, checkout displays an actionable error instead of sending customers to an unknown account. This checkout covers an initial payment only, not recurring subscriptions. Arrange subsequent monthly payments separately. Website plans remain quote-based and are not included in this payment flow.
-
-## Verification
-
-For each pricing card, check that clicking Pay with PayPal selects the correct plan. Continue to checkout and confirm the recipient and final total on PayPal before approving any payment. Repeat on mobile and with JavaScript disabled. Before configuration, check that the unavailable message and contact link appear and that the button can be retried.
-
-No payment is marked successful or service activated simply because the customer visits or returns from PayPal. Confirm receipt in the receiving PayPal account before providing service. Automatic payment verification, subscription billing, and order storage are not part of this hosted-link integration.
+Visiting or returning from PayPal does not prove a payment was made. Confirm each payment in your PayPal account before starting work. Monthly plan fees are billed separately; this flow handles one-time payments only.

@@ -165,7 +165,7 @@
               <li>Appointment requests and FAQs</li>
               <li>Emergency routing</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="starter">Request payment link</a>
+            <a class="btn btn-ghost btn-block" href="#payment">Get started</a>
           </article>
           <article class="plan plan-featured">
             <p class="badge">Recommended</p>
@@ -175,7 +175,7 @@
               <li>Up to 800 minutes per month</li>
               <li>Everything in Starter</li>
             </ul>
-            <a class="btn btn-primary btn-block" href="#payment" data-payment-plan="growth">Request payment link</a>
+            <a class="btn btn-primary btn-block" href="#payment">Get started</a>
           </article>
           <article class="plan">
             <h3>Pro</h3>
@@ -184,51 +184,55 @@
               <li>Up to 2,000 minutes per month</li>
               <li>Everything in Growth</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="pro">Request payment link</a>
+            <a class="btn btn-ghost btn-block" href="#payment">Get started</a>
           </article>
         </div>
         <p class="on-request"><strong>Available on request</strong> (quoted separately, not included in the plans above): calendar booking, SMS confirmations, CRM integration, and weekly reports.</p>
+        <p class="pay-options"><a href="#payment">Payment options: PayPal and cards <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
     <section class="section section-alt" id="payment" aria-labelledby="payment-title">
       <div class="container narrow">
-        <h2 id="payment-title">Request your PayPal payment link</h2>
-        <p class="section-lead payment-intro">Choose your AI receptionist plan and tell us how to reach you. Suraj sends a secure PayPal payment link for your first payment, usually within one business day.</p>
-        <form class="payment-card" id="payment-form" name="payment-request" action="/payment-request-thanks/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="payment-request">
-          <p class="payment-honeypot" hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-          <label for="payment-plan">Your plan</label>
-          <select id="payment-plan" name="plan" aria-describedby="payment-terms" required>
-            <option value="starter">Starter — $297/mo + $497 setup ($794 first payment)</option>
-            <option value="growth">Growth — $597/mo + $497 setup ($1,094 first payment)</option>
-            <option value="pro">Pro — $1,197/mo + $497 setup ($1,694 first payment)</option>
-          </select>
-          <div class="payment-fields">
-            <div>
-              <label for="payment-name">Your name</label>
-              <input id="payment-name" name="name" type="text" autocomplete="name" required maxlength="120">
-            </div>
-            <div>
-              <label for="payment-email">Email for the PayPal link</label>
-              <input id="payment-email" name="email" type="email" autocomplete="email" required maxlength="200">
-            </div>
-            <div>
-              <label for="payment-business">Business name</label>
-              <input id="payment-business" name="business" type="text" autocomplete="organization" required maxlength="160">
-            </div>
-            <div>
-              <label for="payment-phone">Phone <span class="optional">(optional)</span></label>
-              <input id="payment-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
-            </div>
-          </div>
-          <label for="payment-message">Anything we should know? <span class="optional">(optional)</span></label>
-          <textarea id="payment-message" name="message" rows="3" maxlength="2000"></textarea>
-          <p id="payment-terms">All prices are in USD. The first payment includes the one-time $497 setup fee and your first month. No payment is taken on this website. Review the amount and recipient on PayPal before paying. Future monthly payments are arranged separately.</p>
-          <button class="btn btn-paypal btn-block" type="submit" id="paypal-submit">Request PayPal payment link</button>
-          <p class="payment-status" id="payment-status" role="status" aria-live="polite" hidden></p>
-          <p class="payment-help">Prefer email? <a href="mailto:kamdevsuraj03@gmail.com?subject=PayPal%20payment%20link%20request">Contact Suraj directly</a>.</p>
-        </form>
+        <h2 id="payment-title">Pay &amp; get started</h2>
+        <p class="section-lead payment-intro">Pay securely on PayPal. Card payments work too, no PayPal account needed. For international and US clients.</p>
+        <div class="payment-card paypal-list">
+          <h3>PayPal <span class="pay-chip">International / US</span></h3>
+          <p class="pay-sub">One-time setup fees in USD, paid to kamdevsuraj03@gmail.com on PayPal.</p>
+          <ul class="pay-rows">
+            <li class="pay-row pay-row-featured">
+              <div><strong>Launch offer (until 14 Oct 2026)</strong><span>Website Growth plan setup + first year, with 3 months of the AI chat receptionist free</span></div>
+              <span class="pay-price">$1,587</span>
+              <a class="btn btn-primary btn-small-pay" href="/api/paypal-checkout?plan=launch" aria-label="Pay with PayPal: Launch offer (until 14 Oct 2026)">Pay with PayPal</a>
+            </li>
+            <li class="pay-row">
+              <div><strong>AI voice receptionist setup fee</strong><span>One-time setup for any voice plan</span></div>
+              <span class="pay-price">$497</span>
+              <a class="btn btn-ghost btn-small-pay" href="/api/paypal-checkout?plan=voice-setup" aria-label="Pay with PayPal: AI voice receptionist setup fee">Pay with PayPal</a>
+            </li>
+            <li class="pay-row">
+              <div><strong>Website Starter setup</strong><span>1 page site</span></div>
+              <span class="pay-price">$297</span>
+              <a class="btn btn-ghost btn-small-pay" href="/api/paypal-checkout?plan=web-starter" aria-label="Pay with PayPal: Website Starter setup">Pay with PayPal</a>
+            </li>
+            <li class="pay-row">
+              <div><strong>Website Growth setup</strong><span>Up to 5 pages + online booking</span></div>
+              <span class="pay-price">$597</span>
+              <a class="btn btn-ghost btn-small-pay" href="/api/paypal-checkout?plan=web-growth" aria-label="Pay with PayPal: Website Growth setup">Pay with PayPal</a>
+            </li>
+            <li class="pay-row">
+              <div><strong>Website Pro setup</strong><span>Up to 10 pages, 2 locations</span></div>
+              <span class="pay-price">$1,197</span>
+              <a class="btn btn-ghost btn-small-pay" href="/api/paypal-checkout?plan=web-pro" aria-label="Pay with PayPal: Website Pro setup">Pay with PayPal</a>
+            </li>
+            <li class="pay-row">
+              <div><strong>Custom amount / invoice</strong><span>Enter the amount on your invoice</span></div>
+              <span class="pay-price">Any</span>
+              <a class="btn btn-primary btn-small-pay" href="/api/paypal-checkout?plan=custom" aria-label="Pay a custom amount: Custom amount / invoice">Pay a custom amount</a>
+            </li>
+          </ul>
+          <p id="payment-terms">All prices are in USD. You review the amount and recipient on PayPal before paying. Monthly plan fees are billed separately after setup. Questions? <a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20question">Email Suraj</a>.</p>
+        </div>
       </div>
     </section>
 
@@ -256,10 +260,10 @@
             <p class="websites-note">Month-to-month, 30 days' notice to cancel. Or pay yearly and get about 2 months free. Your domain and content stay yours.</p>
             <p class="offer"><strong>Launch offer, until 14 Oct 2026:</strong> Growth plan setup + first year for $1,587, with 3 months of the AI chat receptionist free.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://brightside-dental-demo.vercel.app/" target="_blank" rel="noopener">See a sample site</a>
+              <a class="btn btn-primary" href="#payment">Pay &amp; Get Started</a>
               <a class="btn btn-ghost" href="mailto:kamdevsuraj03@gmail.com?subject=Quote%20request%20-%20website">Get a website quote</a>
             </div>
-            <p class="websites-note">The sample site is a fictional dental clinic built to show what we can do.</p>
+            <p class="websites-note"><a href="https://brightside-dental-demo.vercel.app/" target="_blank" rel="noopener">See a sample site</a> (a fictional dental clinic built to show what we can do).</p>
           </div>
         </div>
       </div>
@@ -294,24 +298,60 @@
 
     <!-- Contact -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="container narrow center">
-        <h2 id="contact-title">Get a quote or a 60-second demo</h2>
-        <p class="section-lead">Email me for a quote, or ask for the demo and I'll send a short recording of the assistant handling a sample call for a dental practice.</p>
-        <a class="btn btn-primary btn-large" href="mailto:kamdevsuraj03@gmail.com?subject=Quote%20request">Get a quote by email</a>
-        <p class="contact-alt"><a href="mailto:kamdevsuraj03@gmail.com?subject=Demo%20request">Or request the 60-second demo recording</a></p>
-        <p class="founder"><strong>Suraj Kamdev, founder</strong> &middot; <a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a></p>
+      <div class="container narrow">
+        <div class="cta-card center">
+          <h2 id="contact-title">Ready to get started?</h2>
+          <p class="section-lead">Choose a plan, pay the setup fee via PayPal, and we start setup.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#payment">Pay &amp; Get Started</a>
+            <a class="btn btn-ghost" href="#pricing">See pricing</a>
+          </div>
+          <p class="contact-alt">Questions? <a href="mailto:kamdevsuraj03@gmail.com?subject=Question">Email us</a>, <a href="mailto:kamdevsuraj03@gmail.com?subject=Quote%20request">get a quote by email</a>, or <a href="mailto:kamdevsuraj03@gmail.com?subject=Demo%20request">request the 60-second demo</a>.</p>
+          <p class="founder"><strong>Suraj Kamdev, founder</strong> &middot; <a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a></p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; 2026 AI Suraj Teach &middot; <a href="#top">AI receptionist</a> &middot; <a href="#websites">Websites for local businesses</a></p>
-      <p>Suraj Kamdev, founder &middot; <a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a></p>
-      <p>Mahadev Asthan Paijawa, Patna, Bihar 800007, India</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top"><img class="brand-mark" src="robot-logo.svg" width="28" height="32" alt=""><span>AI Suraj <em>Teach</em></span></a>
+          <p><strong>Learn AI. Build With AI. Grow With AI.</strong></p>
+          <p>AI receptionists and fast websites for local businesses, by Suraj Kamdev.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="/preview-scenarios/">Illustrative scenarios</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">AI Suraj Teach</h2>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#websites">Websites</a></li>
+            <li><a href="#payment">Payment</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <p>Suraj Kamdev, founder<br><a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a><br>Mahadev Asthan Paijawa, Patna, Bihar 800007, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI Suraj Teach &middot; <a href="#top">AI receptionist</a> &middot; <a href="#websites">Websites for local businesses</a></p>
+        <p>AI &bull; Technology &bull; Online Business</p>
+      </div>
     </div>
-  <p style="text-align:center;padding:1rem"><a href="/privacy-policy/">Privacy Policy</a></p>
-</footer>
+  </footer>
 <script>
   // Progressive enhancement: links remain available if JavaScript is unavailable.
   (() => {
@@ -339,6 +379,5 @@
     });
   })();
 </script>
-<script src="payment.js" defer></script>
 </body>
 </html>

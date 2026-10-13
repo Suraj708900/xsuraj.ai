@@ -50,3 +50,19 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
 }
 @media(max-width:380px){.brand-mark{width:34px;height:39px}.brand{font-size:.78rem}.menu-toggle{font-size:.9rem;padding:.4rem .6rem}}
 @media(prefers-reduced-motion:reduce){.plan,.feature,.step,.stat,.btn{transition:none!important;transform:none!important}}
+
+/* "Ready to get started" CTA card and multi-column footer */
+.contact{background:none}
+.cta-card{padding:clamp(1.75rem,5vw,3rem);border:1px solid #6677a866;border-radius:22px;background:radial-gradient(circle at 85% 100%,#4a2a8a55,transparent 50%),linear-gradient(145deg,#152048,#0b1228);box-shadow:0 18px 48px #02081999}
+.cta-card .hero-actions{margin-top:1.25rem}
+.site-footer{padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2rem}
+.footer-grid h2{margin:0 0 .8rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#f4f6ff}
+.footer-grid ul{margin:0;padding:0;list-style:none}
+.footer-grid p{margin:0 0 .5rem;font-size:.9rem;line-height:1.7}
+.footer-brand .brand{font-size:.95rem;margin-bottom:.8rem}.footer-brand .brand-mark{width:28px;height:32px}
+.footer-brand .brand em{font-style:normal;color:#b48bff}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.85rem}
+.footer-bottom p{margin:0}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
