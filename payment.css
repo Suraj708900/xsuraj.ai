@@ -18,7 +18,9 @@
   font-weight: 700;
 }
 
-.payment-card select {
+.payment-card select,
+.payment-card input,
+.payment-card textarea {
   width: 100%;
   min-height: 48px;
   padding: .85rem;
@@ -29,7 +31,30 @@
   font: inherit;
 }
 
-.payment-card select:focus-visible {
+.payment-card textarea {
+  resize: vertical;
+}
+
+.payment-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0 1rem;
+  margin-top: 1.25rem;
+}
+
+.payment-fields > div,
+.payment-card textarea {
+  margin-bottom: 1.25rem;
+}
+
+.payment-card .optional {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.payment-card select:focus-visible,
+.payment-card input:focus-visible,
+.payment-card textarea:focus-visible {
   outline: 3px solid #facc63;
   outline-offset: 4px;
 }

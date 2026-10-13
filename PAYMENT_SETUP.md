@@ -1,5 +1,13 @@
 # PayPal payment setup
 
+## Current mode: payment link requests
+
+Until the PayPal links below are ready, the payment section on the home page is a Netlify Forms request form named `payment-request`. Customers choose a plan and leave their name, email, business name, and optional phone and message. Submissions appear under **Forms** in the Netlify project dashboard (turn on email notifications there). Reply to each request with the PayPal payment link for the chosen plan.
+
+To switch to direct online checkout later, set the environment variables below and point the payment form back to `/api/paypal-checkout`. The checkout function is still in `netlify/functions/paypal-checkout.mts`.
+
+## Direct checkout (for later)
+
 The AI receptionist pricing buttons open the payment section and select the chosen plan. The checkout endpoint redirects customers to a PayPal payment link configured by the site owner. It does not guess the receiving account from the contact email.
 
 ## Enable live payments

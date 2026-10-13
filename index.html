@@ -165,7 +165,7 @@
               <li>Appointment requests and FAQs</li>
               <li>Emergency routing</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="starter">Pay with PayPal</a>
+            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="starter">Request payment link</a>
           </article>
           <article class="plan plan-featured">
             <p class="badge">Recommended</p>
@@ -175,7 +175,7 @@
               <li>Up to 800 minutes per month</li>
               <li>Everything in Starter</li>
             </ul>
-            <a class="btn btn-primary btn-block" href="#payment" data-payment-plan="growth">Pay with PayPal</a>
+            <a class="btn btn-primary btn-block" href="#payment" data-payment-plan="growth">Request payment link</a>
           </article>
           <article class="plan">
             <h3>Pro</h3>
@@ -184,7 +184,7 @@
               <li>Up to 2,000 minutes per month</li>
               <li>Everything in Growth</li>
             </ul>
-            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="pro">Pay with PayPal</a>
+            <a class="btn btn-ghost btn-block" href="#payment" data-payment-plan="pro">Request payment link</a>
           </article>
         </div>
         <p class="on-request"><strong>Available on request</strong> (quoted separately, not included in the plans above): calendar booking, SMS confirmations, CRM integration, and weekly reports.</p>
@@ -193,20 +193,41 @@
 
     <section class="section section-alt" id="payment" aria-labelledby="payment-title">
       <div class="container narrow">
-        <h2 id="payment-title">Pay with PayPal</h2>
-        <p class="section-lead payment-intro">Choose your AI receptionist plan and review your first payment before continuing.</p>
-        <form class="payment-card" id="payment-form" action="/api/paypal-checkout" method="get">
+        <h2 id="payment-title">Request your PayPal payment link</h2>
+        <p class="section-lead payment-intro">Choose your AI receptionist plan and tell us how to reach you. Suraj sends a secure PayPal payment link for your first payment, usually within one business day.</p>
+        <form class="payment-card" id="payment-form" name="payment-request" action="/payment-request-thanks/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="payment-request">
+          <p class="payment-honeypot" hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <label for="payment-plan">Your plan</label>
-          <select id="payment-plan" name="plan" aria-describedby="payment-terms">
+          <select id="payment-plan" name="plan" aria-describedby="payment-terms" required>
             <option value="starter">Starter — $297/mo + $497 setup ($794 first payment)</option>
             <option value="growth">Growth — $597/mo + $497 setup ($1,094 first payment)</option>
             <option value="pro">Pro — $1,197/mo + $497 setup ($1,694 first payment)</option>
           </select>
-          <p id="payment-terms">All prices are in USD. The first payment includes the one-time $497 setup fee and your first month. Review the amount and recipient on PayPal before paying. Future monthly payments are arranged separately; this button does not activate automatic billing.</p>
-          <button class="btn btn-paypal btn-block" type="submit" id="paypal-submit">Continue with PayPal</button>
+          <div class="payment-fields">
+            <div>
+              <label for="payment-name">Your name</label>
+              <input id="payment-name" name="name" type="text" autocomplete="name" required maxlength="120">
+            </div>
+            <div>
+              <label for="payment-email">Email for the PayPal link</label>
+              <input id="payment-email" name="email" type="email" autocomplete="email" required maxlength="200">
+            </div>
+            <div>
+              <label for="payment-business">Business name</label>
+              <input id="payment-business" name="business" type="text" autocomplete="organization" required maxlength="160">
+            </div>
+            <div>
+              <label for="payment-phone">Phone <span class="optional">(optional)</span></label>
+              <input id="payment-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+            </div>
+          </div>
+          <label for="payment-message">Anything we should know? <span class="optional">(optional)</span></label>
+          <textarea id="payment-message" name="message" rows="3" maxlength="2000"></textarea>
+          <p id="payment-terms">All prices are in USD. The first payment includes the one-time $497 setup fee and your first month. No payment is taken on this website. Review the amount and recipient on PayPal before paying. Future monthly payments are arranged separately.</p>
+          <button class="btn btn-paypal btn-block" type="submit" id="paypal-submit">Request PayPal payment link</button>
           <p class="payment-status" id="payment-status" role="status" aria-live="polite" hidden></p>
-          <p class="payment-help">Need help? <a href="mailto:kamdevsuraj03@gmail.com?subject=PayPal%20payment%20help">Contact Suraj for a payment link</a>.</p>
-          <noscript><p>The PayPal button works without JavaScript. If checkout is unavailable, the next page explains how to get help.</p></noscript>
+          <p class="payment-help">Prefer email? <a href="mailto:kamdevsuraj03@gmail.com?subject=PayPal%20payment%20link%20request">Contact Suraj directly</a>.</p>
         </form>
       </div>
     </section>
