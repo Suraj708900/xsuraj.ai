@@ -50,3 +50,11 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
 }
 @media(max-width:380px){.brand-mark{width:34px;height:39px}.brand{font-size:.78rem}.menu-toggle{font-size:.9rem;padding:.4rem .6rem}}
 @media(prefers-reduced-motion:reduce){.plan,.feature,.step,.stat,.btn{transition:none!important;transform:none!important}}
+
+/* 2026 all-business premium positioning */
+.industry-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:900px;margin:27px auto 19px}
+.industry-strip span{font-size:.77rem;color:#e1e8ff;border:1px solid #566aa072;border-radius:999px;padding:8px 13px;background:linear-gradient(125deg,#19294dce,#1c1748c7)}
+.websites-from strong{color:#fff}.websites-tiers strong{color:#e7eaff}.offer{background:linear-gradient(110deg,#1b3162,#282052);border-color:#6a67ab;color:#e9eeff}
+#template-showcase{background:radial-gradient(circle at 20% 20%,#20265e,transparent 40%),radial-gradient(circle at 80% 80%,#342264,transparent 46%),#0c142e}
+#template-showcase .btn{margin-top:7px}
+@media(max-width:760px){.industry-strip{gap:7px}.industry-strip span{padding:7px 10px}}
