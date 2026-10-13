@@ -58,6 +58,8 @@
           '<a class="ast-contact-cta" href="/contact/?service=quote">Request a quote ↗</a>',
           '<a href="/contact/?service=meet#quote-form">Google Meet appointment ↗</a>',
           '<a href="/contact/?service=chat#quote-form">Google Chat support ↗</a>',
+          '<a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer"><img src="/google-calendar-icon.svg" width="22" height="22" alt=""> Google Calendar ↗</a>',
+          '<a href="https://chat.google.com/" target="_blank" rel="noopener noreferrer"><img src="/google-chat-icon.svg" width="22" height="22" alt=""> Google Chat ↗</a>',
         '</div>',
       '</div>',
       '<div class="ast-footer-bottom">',

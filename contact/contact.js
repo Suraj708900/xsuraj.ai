@@ -55,6 +55,7 @@
       "Name: " + field("quote-name"),
       "Email: " + field("quote-email"),
       "Business: " + field("quote-business"),
+      "Address: " + field("quote-address"),
       "",
       "My requirements:",
       field("quote-message"),
