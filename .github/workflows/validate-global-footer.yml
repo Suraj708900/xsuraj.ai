@@ -1,0 +1,26 @@
+name: Validate premium footer and FAQ assistant
+on:
+  push:
+    branches: [main, premium-global-footer-20261013]
+    paths:
+      - 'site-footer.js'
+      - 'site-footer.css'
+      - 'scripts/validate-global-footer.mjs'
+      - '.github/workflows/validate-global-footer.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JavaScript syntax
+        run: node --check site-footer.js
+      - name: Check 100 pages, CTA, footer and assistant interactions
+        run: node scripts/validate-global-footer.mjs
