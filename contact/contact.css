@@ -65,3 +65,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .google-connect .contact-outlink{font-size:.9rem}
 .google-connect .google-meet-link{border-color:#4778ce;background:#223e70}
 .google-connect .google-chat-link{border-color:#398b7a;background:#1b494b}
+
+/* Unified responsive navigation and clear Google service actions */
+.contact-header{position:relative;z-index:5;max-width:none;padding:12px max(20px,calc((100% - 1200px)/2));gap:22px}
+.contact-header nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(9px,1.5vw,22px)}
+.contact-header nav a{white-space:nowrap;font-size:clamp(.7rem,.85vw,.85rem)}
+.contact-header nav .nav-contact{background:linear-gradient(115deg,#6559f6,#9254f6);padding:9px 16px;border-radius:999px;color:white;box-shadow:0 6px 18px #6349ff44}
+.google-direct-links{display:grid;grid-template-columns:1fr;gap:10px;margin:15px 0}
+.google-connect .google-direct-link{margin:0;justify-content:flex-start;min-height:52px;gap:12px}
+.google-direct-link span:last-child{margin-left:auto}
+.google-direct-link img{display:block;flex:none;object-fit:contain}
+.contact-aside{min-width:0}
+.contact-grid>*{min-width:0}
+@media(max-width:980px){.contact-header{align-items:flex-start;flex-direction:column;gap:10px}.contact-header nav{justify-content:flex-start;max-width:100%;overflow-x:auto;padding-bottom:5px;flex-wrap:nowrap}}
+@media(max-width:560px){.contact-header{padding:12px 16px}.contact-header nav{gap:12px}.contact-header nav a{font-size:.75rem}.google-direct-links{grid-template-columns:1fr}}
