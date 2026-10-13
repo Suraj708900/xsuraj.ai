@@ -56,6 +56,8 @@
           '<a href="/contact/">kamdevsuraj03@gmail.com</a>',
           '<p>Mahadev Asthan Paijawa, Patna, Bihar 800007, India</p>',
           '<a class="ast-contact-cta" href="/contact/?service=quote">Request a quote ↗</a>',
+          '<a href="/contact/?service=meet#quote-form">Google Meet appointment ↗</a>',
+          '<a href="/contact/?service=chat#quote-form">Google Chat support ↗</a>',
         '</div>',
       '</div>',
       '<div class="ast-footer-bottom">',
