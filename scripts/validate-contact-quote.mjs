@@ -58,6 +58,11 @@ for(const service of ['meet','chat']){
   assert(contact.includes('<option value="'+service+'">'),'Contact form '+service+' service missing');
   assert(js.includes(service+': "Google'),'Contact script '+service+' subject missing');
 }
-assert(contact.includes('Google Meet booking link or Chat invitation is provided only after confirmation.'),'Must not promise unconfigured direct meeting or Chat link');
+assert(contact.includes('not a conversation with our team') && contact.includes('confirmed booking or chat invitation will be shared separately.'),'Google links must not pretend to open a direct customer meeting or chat invitation');
+for(const url of ['https://calendar.google.com/calendar/u/0/r','https://chat.google.com/']) {
+  assert(contact.includes(url) && footer.includes(url) && home.includes(url),'Google Calendar/Chat links should exist across the homepage, contact page, and footer: '+url);
+}
+assert(contact.includes('name="address"'),'Contact lead form should include an address field');
+assert(payment.includes('name="customer-address"'),'Payment enquiry form should include an address field');
 console.log('PASS: Google Meet and Google Chat requests are selectable, prefilled and linked in homepage/footer; no fake meeting link.');
 console.log('PASS: homepage, footer, 60 templates, 8 working industry filters, 3 working benefit chips, Netlify form and browser-based Gmail/Outlook quote drafts.');
