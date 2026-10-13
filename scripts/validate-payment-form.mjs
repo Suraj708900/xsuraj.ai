@@ -24,6 +24,12 @@ assert.equal((html.match(/href="#payment-request-form" data-plan=/g)||[]).length
 assert(!/href="mailto:[^"]+">Request secure payment details/.test(html),"Broken mailto still present");
 assert(html.includes("https://mail.google.com/mail/")&&html.includes("https://outlook.live.com/mail/0/deeplink/compose"),"Browser mail alternatives missing");
 assert(html.includes('id="copy-payment-email"'),"Copy email button missing");
+assert(html.includes('href="https://meet.google.com/"') && html.includes('src="/google-meet-icon.svg"'),"Direct Google Meet entry and icon missing from payment sidebar");
+assert(html.includes('href="https://chat.google.com/"') && html.includes('src="/google-chat-icon.svg"'),"Direct Google Chat entry and icon missing from payment sidebar");
+assert(html.includes('/contact/?service=meet#quote-form') && html.includes('/contact/?service=chat#quote-form'),"Meet and Chat contact request links missing");
+assert(html.includes('they do not start a call or chat'),"Generic Google links must not pretend to contact the website owner directly");
+assert(existsSync('google-meet-icon.svg') && existsSync('google-chat-icon.svg'),"Google icons missing from repository");
+
 assert(css.includes("@media(max-width:590px)"),"Responsive form CSS missing");
 assert(html.includes('src="/payment/payment-request.js"')&&html.includes('href="/payment/payment-request.css"'),"Assets not loaded");
 new vm.Script(source);
