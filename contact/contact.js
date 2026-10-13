@@ -22,6 +22,12 @@
     if (Object.prototype.hasOwnProperty.call(allowedServices, requested)) {
       service.value = requested;
     }
+    const templateId = Number(new URLSearchParams(window.location.search).get("template"));
+    if (Number.isInteger(templateId) && templateId >= 1 && templateId <= 60) {
+      const message = document.getElementById("quote-message");
+      if (message && !message.value.trim()) message.value = "I am interested in website template #" + templateId + ". Please send me a quote and next steps.";
+      service.value = "website";
+    }
   } catch {
     // The contact form remains usable without URL search support.
   }
