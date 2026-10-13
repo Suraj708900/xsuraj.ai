@@ -34,6 +34,30 @@ assert.equal(manifest.categories.length,10);
 assert.equal(new Set(manifest.categories.flatMap(x=>x.photoIds)).size,100);
 const ids=[...home.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);
 assert.equal(new Set(ids).size,ids.length,"Duplicate homepage DOM id");
+
+// Ordering requested by the owner: the website showcase/build plans sit at the
+// start of the homepage, and the voice plans/blog preview follow the Features
+// section in the middle. Keep the original six plan CTAs and four blog links.
+const orderedSections=[
+ "id=\"top\"",
+ "id=\"design-examples\"",
+ "id=\"service-plans\"",
+ "id=\"scenarios\"",
+ "id=\"problem\"",
+ "id=\"how\"",
+ "id=\"features\"",
+ "id=\"ai-service-plans\"",
+ "id=\"latest-blogs\"",
+ "id=\"pricing\""
+];
+let lastSectionPos=-1;
+for(const marker of orderedSections){
+ const pos=home.indexOf(marker);
+ assert(pos>lastSectionPos,`Homepage section order broken at ${marker}`);
+ lastSectionPos=pos;
+}
+assert(home.includes('id="premium-website-plans"')&&home.includes('id="premium-voice-plans"'),"Website or AI price group missing");
+assert(home.includes('href="#ai-service-plans"'),"Website pricing must link to later AI plans");
 assert.equal((home.match(/class="featured-demo-card/g)||[]).length,5);
 assert.equal((home.match(/class="premium-plan-card/g)||[]).length,6);
 assert.equal((home.match(/class="premium-blog-card/g)||[]).length,4);
