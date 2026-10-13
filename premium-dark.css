@@ -66,3 +66,63 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
 .hero-effects a:focus-visible,.industry-strip a:focus-visible{outline:3px solid #d8caff;outline-offset:3px}
 #feature-call-answering,#feature-appointments,#feature-faq{scroll-margin-top:110px}
 @media(max-width:760px){.industry-strip a{padding:7px 10px}}
+
+
+/* Trust-first, photo-led homepage hero. Figures and links remain accessible without JS. */
+.hero{padding:clamp(55px,6vw,88px) 0 70px;text-align:left}
+.hero .hero-inner{max-width:1180px}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:clamp(26px,4.5vw,66px);align-items:center}
+.hero-copy{min-width:0}
+.hero-copy .eyebrow{font-size:.72rem;letter-spacing:.12em;line-height:1.45;padding:.65rem 1rem;margin-bottom:18px}
+.hero .hero-copy h1{font-size:clamp(2.65rem,5.2vw,4.85rem);max-width:620px;line-height:1.1;letter-spacing:-.052em;margin:0 0 16px;text-wrap:balance}
+.hero-subheadline{color:#eef2ff;font-weight:750;font-size:clamp(1.18rem,2.2vw,1.62rem);line-height:1.32;margin:0 0 15px}
+.hero .hero-copy .lead{max-width:600px;margin:0;font-size:clamp(.98rem,1.38vw,1.15rem);line-height:1.75;color:#c4d1ed}
+.hero .hero-actions{justify-content:flex-start;align-items:center;gap:12px;margin:24px 0 12px}
+.hero .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:.82rem 1.2rem;font-size:.92rem}
+.hero-cta-note{font-size:.82rem;color:#bbc7e5;line-height:1.5;margin:10px 0 0}
+.hero-photo{position:relative;isolation:isolate;min-height:455px;margin:0;overflow:hidden;border-radius:28px;border:1px solid #8796d377;background:#15254a;box-shadow:0 28px 90px #02071588,0 0 60px #6950ff20}
+.hero-photo>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-photo:before{position:absolute;z-index:1;content:"";inset:30% 0 0;background:linear-gradient(0deg,#060d24e8,transparent 80%);pointer-events:none}
+.hero-photo figcaption{position:absolute;z-index:2;right:13px;top:13px;color:#eff4ff;font-size:.72rem;line-height:1.4;padding:8px 11px;background:#0b1733d6;border:1px solid #d9e2fc55;border-radius:999px;max-width:calc(100% - 26px);text-align:center;backdrop-filter:blur(8px)}
+.hero-photo-overlay{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;display:flex;align-items:center;gap:14px;padding:17px;border-radius:19px;border:1px solid #b2c6ff70;background:#101f44e8;backdrop-filter:blur(15px);box-shadow:0 12px 30px #050e2c99;color:#f5f8ff}
+.hero-photo-check,.hero-trust-icon{display:grid;place-items:center;flex:none;color:#083a30;background:#91f4d0;border-radius:50%;font-weight:900}
+.hero-photo-check{width:43px;height:43px;font-size:1.6rem}
+.hero-photo-overlay strong,.hero-photo-overlay small{display:block;line-height:1.4}
+.hero-photo-overlay strong{font-size:1rem}
+.hero-photo-overlay small{font-size:.78rem;color:#ccd8f4;margin-top:3px}
+.hero-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:30px 0 20px}
+.hero-trust-item{display:flex;gap:11px;align-items:flex-start;padding:18px;border-radius:18px;background:#101d3bdb;border:1px solid #6d81bf63;min-width:0}
+.hero-trust-icon{width:25px;height:25px;font-size:.9rem;margin-top:2px}
+.hero-trust-item strong,.hero-trust-item small{display:block;line-height:1.5}
+.hero-trust-item strong{font-size:.96rem;color:#f3f7ff}
+.hero-trust-item small{font-size:.83rem;color:#b8c8e7;margin-top:3px}
+.hero .auth-actions{justify-content:center}
+.hero .hero-effects{justify-content:center}
+.hero .industry-strip{justify-content:center}
+.hero .hero-reply,.hero .hero-note,.hero .hero-also{text-align:center;max-width:930px;margin-left:auto;margin-right:auto}
+@media(max-width:940px){
+  .hero-top{grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:23px}
+  .hero .hero-copy h1{font-size:clamp(2.4rem,5vw,3.6rem)}
+  .hero-photo{min-height:390px}
+  .hero .hero-actions .btn{width:100%}
+}
+@media(max-width:740px){
+  .hero{padding:44px 0 59px}
+  .hero-top{grid-template-columns:1fr;gap:28px}
+  .hero .hero-copy h1{font-size:clamp(2.65rem,9.2vw,4rem)}
+  .hero-photo{min-height:350px}
+  .hero-trust{grid-template-columns:1fr;gap:10px;margin-top:22px}
+  .hero-trust-item{padding:13px 16px}
+  .hero .hero-actions{gap:11px}
+  .hero .hero-actions .btn{width:100%}
+  .hero .hero-copy .lead{font-size:1rem}
+}
+@media(max-width:450px){
+  .hero-photo{min-height:285px;border-radius:19px}
+  .hero-photo-overlay{left:12px;right:12px;bottom:12px;padding:12px;gap:10px}
+  .hero-photo-check{width:34px;height:34px;font-size:1.25rem}
+  .hero-photo-overlay strong{font-size:.86rem}
+  .hero-photo-overlay small{font-size:.73rem}
+  .hero-photo figcaption{font-size:.63rem}
+  .hero .hero-copy h1{font-size:clamp(2.4rem,10.6vw,3.25rem)}
+}
