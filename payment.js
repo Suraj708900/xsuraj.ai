@@ -5,6 +5,7 @@
   const status = document.getElementById('payment-status');
   if (!form || !planSelect || !submitButton || !status) return;
 
+  const buttonLabel = submitButton.textContent;
   const clearStatus = () => {
     status.hidden = true;
     status.textContent = '';
@@ -23,45 +24,31 @@
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (submitButton.disabled) return;
+    const body = new URLSearchParams(new FormData(form)).toString();
     submitButton.disabled = true;
-    planSelect.disabled = true;
-    submitButton.textContent = 'Opening PayPal…';
+    submitButton.textContent = 'Sending request…';
     form.setAttribute('aria-busy', 'true');
     status.hidden = false;
     status.dataset.error = 'false';
-    status.textContent = 'Preparing your PayPal checkout…';
+    status.textContent = 'Sending your payment link request…';
 
     try {
-      const requestUrl = new URL(form.action);
-      requestUrl.searchParams.set('plan', planSelect.value);
-      const response = await fetch(requestUrl, {
-        headers: { Accept: 'application/json' },
-        cache: 'no-store',
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
         signal: AbortSignal.timeout(15000),
       });
-      if (!response.headers.get('content-type')?.includes('application/json')) {
-        throw new Error('Checkout is unavailable. Please contact Suraj for a PayPal payment link.');
-      }
-      const result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.error || 'Unable to open PayPal. Please try again.');
-      }
-      const checkoutUrl = new URL(result.url);
-      if (checkoutUrl.protocol !== 'https:' || checkoutUrl.username || checkoutUrl.password || checkoutUrl.port ||
-          !['www.paypal.com', 'paypal.com', 'paypal.me', 'www.paypal.me'].includes(checkoutUrl.hostname)) {
-        throw new Error('The PayPal payment link is invalid. Please contact Suraj.');
-      }
-      status.textContent = 'Taking you to PayPal. Payment is not yet complete.';
-      window.location.assign(checkoutUrl.href);
-    } catch (error) {
+      if (!response.ok) throw new Error('Request failed');
+      const plan = planSelect.options[planSelect.selectedIndex].text.split(' — ')[0];
+      form.reset();
+      status.textContent = `Thanks! Your ${plan} request was sent. Suraj will email your PayPal payment link, usually within one business day. No payment has been taken yet.`;
+    } catch {
       status.dataset.error = 'true';
-      status.textContent = error.name === 'TimeoutError' || error.name === 'AbortError' || error instanceof TypeError
-        ? 'Unable to connect to checkout. Check your connection and try again, or contact Suraj for a PayPal payment link.'
-        : error.message;
+      status.textContent = 'Your request could not be sent. Check your connection and try again, or email kamdevsuraj03@gmail.com.';
     } finally {
       submitButton.disabled = false;
-      planSelect.disabled = false;
-      submitButton.textContent = 'Continue with PayPal';
+      submitButton.textContent = buttonLabel;
       form.removeAttribute('aria-busy');
     }
   });
