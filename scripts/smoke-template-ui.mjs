@@ -18,7 +18,7 @@ assert.equal((grid.innerHTML.match(/data-business-photo/g)||[]).length,60,'Every
 assert.equal(gallery.elements.get('template-count').textContent,'60 templates found');
 gallery.elements.get('template-category').value='Dental & Healthcare';gallery.events['template-category:change']();
 assert.equal((grid.innerHTML.match(/class="template-card"/g)||[]).length,6,'Country/category filter must show 6');
-gallery.elements.get('template-search').value='dental';gallery.events['template-search:input']();
+gallery.elements.get('template-search').value='dental clinic';gallery.events['template-search:input']();
 assert.equal((grid.innerHTML.match(/class="template-card"/g)||[]).length,1,'Search and category filter combine');
 const heroImages=new Set();
 for(let id=1;id<=60;id++){
