@@ -80,6 +80,7 @@
           <div class="payment-request-card">
             <form id="secure-payment-request-form" name="secure-payment-request" method="POST" action="/payment/thanks/" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="secure-payment-request">
+            <input type="hidden" name="subject" value="New AI Suraj Teach enquiry - %{formName} (#%{submissionId})">
               <p class="sr-only"><label>Do not fill this field: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
               <div class="payment-field">
                 <label for="requested-plan">Select your plan <span aria-hidden="true">*</span></label>
