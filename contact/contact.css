@@ -57,3 +57,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .contact-info p{font-size:.83rem;color:#c5d1ea;margin:6px 0 0}
 @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-hero{padding:57px 0 40px}.contact-main{padding-bottom:60px}.contact-header{padding:12px 19px}}
 @media(max-width:560px){.contact-fields-two{grid-template-columns:1fr;gap:0}.contact-header nav{gap:10px}.contact-header nav a{font-size:.75rem}.contact-brand{font-size:.95rem}.contact-brand img{width:32px;height:36px}.contact-hero{padding:42px 0 29px}.contact-wrap{padding-inline:16px}.contact-card,.contact-aside{border-radius:16px}.contact-aside{padding:23px}}
+
+/* Google Chat and Google Meet contact methods: transparent, accessible CTAs */
+.google-connect-section{padding:12px 0 52px;background:#090e20}
+.google-connect-heading{margin:0 0 22px}
+.google-connect-heading h2{font-size:clamp(27px,3.2vw,39px);letter-spacing:-.04em;line-height:1.2;margin:0 0 12px}
+.google-connect-heading h2 span{color:#a69bff}
+.google-connect-heading>p:last-child{margin:0;color:#c7d3ef;max-width:700px;font-size:.92rem}
+.google-connect-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.google-connect-card{border:1px solid #5369a2;background:linear-gradient(138deg,#16264d,#111b36 82%);border-radius:20px;padding:clamp(22px,3vw,30px);box-shadow:0 14px 48px #0003}
+.google-connect-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid #6978b1;border-radius:13px;background:#24345e;font-size:24px;margin-bottom:17px}
+.google-connect-card h3{font-size:1.4rem;letter-spacing:-.025em;margin:0 0 12px}
+.google-connect-card p{color:#c2cee9;font-size:.86rem;line-height:1.7;margin:0 0 20px}
+.google-connect-card strong{color:#eff2ff;overflow-wrap:anywhere}
+.google-connect-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.google-connect-actions a,.google-connect-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:10px;padding:10px 15px;font:750 .85rem/1.35 system-ui,sans-serif;cursor:pointer}
+.google-connect-actions a{color:#fff;background:linear-gradient(105deg,#3a72ee,#7655e0);text-decoration:none}
+.google-connect-actions button{color:#d8e2ff;background:#21365c;border:1px solid #7892ce}
+.google-connect-actions a:hover,.google-connect-actions button:hover{filter:brightness(1.14)}
+.google-connect-actions a:focus-visible,.google-connect-actions button:focus-visible{outline:3px solid #d9c4ff;outline-offset:3px}
+.google-connect-card .google-connect-feedback{margin:12px 0 0;min-height:20px;font-size:.76rem;color:#afc5e8}
+#google-meet-preference{border-top:1px solid #3b4d79;padding-top:18px;margin-top:7px}
+@media(max-width:750px){.google-connect-grid{grid-template-columns:1fr}.google-connect-section{padding-bottom:38px}}
