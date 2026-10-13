@@ -57,3 +57,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .contact-info p{font-size:.83rem;color:#c5d1ea;margin:6px 0 0}
 @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-hero{padding:57px 0 40px}.contact-main{padding-bottom:60px}.contact-header{padding:12px 19px}}
 @media(max-width:560px){.contact-fields-two{grid-template-columns:1fr;gap:0}.contact-header nav{gap:10px}.contact-header nav a{font-size:.75rem}.contact-brand{font-size:.95rem}.contact-brand img{width:32px;height:36px}.contact-hero{padding:42px 0 29px}.contact-wrap{padding-inline:16px}.contact-card,.contact-aside{border-radius:16px}.contact-aside{padding:23px}}
+
+/* Google Meet and Chat appointment request surfaces */
+.google-connect{border-top:1px solid #52608a;margin-top:24px;padding-top:22px}
+.google-connect h3{font-size:1.25rem;letter-spacing:-.025em;margin:0 0 9px}
+.google-connect>p:not(.contact-kicker){color:#c6d1e9;font-size:.86rem;line-height:1.65}
+.google-connect .contact-outlink{font-size:.9rem}
+.google-connect .google-meet-link{border-color:#4778ce;background:#223e70}
+.google-connect .google-chat-link{border-color:#398b7a;background:#1b494b}
