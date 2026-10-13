@@ -64,5 +64,11 @@ for(const url of ['https://calendar.google.com/calendar/u/0/r','https://chat.goo
 }
 assert(contact.includes('name="address"'),'Contact lead form should include an address field');
 assert(payment.includes('name="customer-address"'),'Payment enquiry form should include an address field');
+
+for(const [name,id] of [['business','quote-business'],['address','quote-address'],['message','quote-message']]){
+  const field=contact.match(new RegExp('<(?:input|textarea)\\b[^>]*id="'+id+'"[^>]*>'));
+  assert(field && field[0].includes('name="'+name+'"') && field[0].includes('required'),'Contact form must require '+name);
+}
+assert(!/Do not (?:submit|include) passwords/i.test(contact),'Remove requested sensitive-data warning from contact form');
 console.log('PASS: Google Meet and Google Chat requests are selectable, prefilled and linked in homepage/footer; no fake meeting link.');
 console.log('PASS: homepage, footer, 60 templates, 8 working industry filters, 3 working benefit chips, Netlify form and browser-based Gmail/Outlook quote drafts.');
