@@ -39,3 +39,16 @@
 .payment-request-card a:focus-visible,.payment-contact-options a:focus-visible,.payment-copy-row button:focus-visible,.payment-form-submit:focus-visible{outline:3px solid #e2cd79;outline-offset:3px}
 @media(max-width:870px){.payment-request-layout{grid-template-columns:1fr}}
 @media(max-width:590px){.payment-request-section{padding:55px 14px 70px}.payment-field-grid{grid-template-columns:1fr;gap:0}.payment-request-card,.payment-contact-options{padding:21px}}
+
+/* Google Meet / Google Chat buttons in the payment contact sidebar */
+.payment-google-options{border-top:1px solid #50618b;padding-top:19px;margin-top:25px}
+.payment-google-options h4{color:#fff;font-size:1.03rem;letter-spacing:-.02em;margin:0 0 5px}
+.payment-google-options>p{color:#c2cdeb;font-size:.85rem;line-height:1.55;margin:0 0 11px}
+.payment-contact-options a.payment-google-link{display:flex;justify-content:flex-start;align-items:center;gap:11px;min-height:51px}
+.payment-google-link img{display:block;width:27px;height:27px;flex:0 0 27px;object-fit:contain}
+.payment-contact-options a.payment-google-link span:last-child{margin-left:auto}
+.payment-google-requests{display:grid;gap:8px;margin-top:15px}
+.payment-google-requests a{color:#c8beff;font-size:.84rem;font-weight:750;text-decoration:underline;text-underline-offset:3px;line-height:1.5}
+.payment-google-requests a:hover{color:#fff}
+.payment-google-options .payment-google-hint{font-size:.75rem;color:#aebddd;line-height:1.6;margin:13px 0 0}
+.payment-google-options a:focus-visible{outline:3px solid #e2cd79;outline-offset:3px}
