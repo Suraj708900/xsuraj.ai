@@ -1,0 +1,33 @@
+name: Install premium footer across 100 blog posts
+on:
+  push:
+    branches: [premium-global-footer-20261013]
+    paths:
+      - 'scripts/install-global-footer.py'
+      - '.github/workflows/install-global-footer.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install-footer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: premium-global-footer-20261013
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate and apply footer to 100 blog articles
+        run: python scripts/install-global-footer.py
+      - name: Verify footer JS syntax
+        run: node --check site-footer.js
+      - name: Commit article changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/
+          if ! git diff --cached --quiet; then
+            git commit -m "Add shared premium footer to all 100 blog article pages"
+            git push origin HEAD:premium-global-footer-20261013
+          fi
