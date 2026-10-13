@@ -64,5 +64,26 @@ for(const url of ['https://calendar.google.com/calendar/u/0/r','https://chat.goo
 }
 assert(contact.includes('name="address"'),'Contact lead form should include an address field');
 assert(payment.includes('name="customer-address"'),'Payment enquiry form should include an address field');
+// The business identity, address and requirements must actually be mandatory;
+// a visual asterisk alone is insufficient for native browser validation.
+function assertRequiredInput(html,id,kind) {
+ const escaped=id.replace(/[.*+?^\x24{}()|[\]\\]/g,'\\assert(contact.includes('name="address"'),'Contact lead form should include an address field');
+assert(payment.includes('name="customer-address"'),'Payment enquiry form should include an address field');');
+ const input=html.match(new RegExp('<'+kind+'\\b[^>]*\\bid="'+escaped+'"[^>]*>'))?.[0];
+ assert(input && /\\brequired(?:\\s|>|=)/.test(input),'Required field not enforced: '+id);
+ const label=html.match(new RegExp('<label\\b[^>]*\\bfor="'+escaped+'"[^>]*>([\\s\\S]*?)<\\/label>'))?.[1];
+ assert(label && label.includes('<span aria-hidden="true">*</span>'),'Required label asterisk missing: '+id);
+ assert(!label.includes('(optional)'),'Required label still says optional: '+id);
+}
+for (const [id,kind] of [['quote-business','input'],['quote-address','textarea'],['quote-message','textarea']]) {
+ assertRequiredInput(contact,id,kind);
+}
+for (const [id,kind] of [['customer-business','input'],['customer-address','textarea'],['customer-message','textarea']]) {
+ assertRequiredInput(payment,id,kind);
+}
+for (const page of [contact,payment]) {
+ assert(!page.includes('Do not submit passwords, card numbers, bank details, IDs or patient medical information.'),'Removed security warning still present');
+ assert(!page.includes('Do not include passwords, bank details, card numbers, or patient/medical information.'),'Removed security warning still present');
+}
 console.log('PASS: Google Meet and Google Chat requests are selectable, prefilled and linked in homepage/footer; no fake meeting link.');
 console.log('PASS: homepage, footer, 60 templates, 8 working industry filters, 3 working benefit chips, Netlify form and browser-based Gmail/Outlook quote drafts.');
