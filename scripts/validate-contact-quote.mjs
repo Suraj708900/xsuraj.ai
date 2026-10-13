@@ -64,5 +64,21 @@ for(const url of ['https://calendar.google.com/calendar/u/0/r','https://chat.goo
 }
 assert(contact.includes('name="address"'),'Contact lead form should include an address field');
 assert(payment.includes('name="customer-address"'),'Payment enquiry form should include an address field');
+// Business name, address and project requirements are all mandatory.
+function assertRequiredField(html,id,tag) {
+ const element=html.split('\n').find(line=>line.includes('<'+tag+' ') && line.includes('id="'+id+'"'));
+ assert(element && element.includes(' required>'),'Required field not enforced: '+id);
+ const label=html.split('\n').find(line=>line.includes('<label for="'+id+'">'));
+ assert(label && label.includes('<span aria-hidden="true">*</span>'),'Required label asterisk missing: '+id);
+ assert(!label.includes('(optional)'),'Required label still marked optional: '+id);
+}
+for(const [id,tag] of [['quote-business','input'],['quote-address','textarea'],['quote-message','textarea']])
+ assertRequiredField(contact,id,tag);
+for(const [id,tag] of [['customer-business','input'],['customer-address','textarea'],['customer-message','textarea']])
+ assertRequiredField(payment,id,tag);
+for(const page of [contact,payment]) {
+ assert(!page.includes('Do not submit passwords, card numbers, bank details, IDs or patient medical information.'),'Old warning still present');
+ assert(!page.includes('Do not include passwords, bank details, card numbers, or patient/medical information.'),'Old warning still present');
+}
 console.log('PASS: Google Meet and Google Chat requests are selectable, prefilled and linked in homepage/footer; no fake meeting link.');
 console.log('PASS: homepage, footer, 60 templates, 8 working industry filters, 3 working benefit chips, Netlify form and browser-based Gmail/Outlook quote drafts.');
