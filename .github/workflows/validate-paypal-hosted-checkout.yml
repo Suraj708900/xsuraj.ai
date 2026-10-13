@@ -1,0 +1,27 @@
+name: Validate PayPal hosted checkout configuration
+on:
+  push:
+    branches: [main, paypal-hosted-checkout-ready-20261013]
+    paths:
+      - "payment/**"
+      - "index.html"
+      - "site-footer.js"
+      - "scripts/validate-paypal-hosted-checkout.mjs"
+      - ".github/workflows/validate-paypal-hosted-checkout.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify PayPal checkout source syntax
+        run: node --check payment/paypal-checkout.js
+      - name: Validate all six checkout paths and safe fallbacks
+        run: node scripts/validate-paypal-hosted-checkout.mjs

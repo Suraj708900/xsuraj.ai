@@ -94,7 +94,7 @@
   function answerFor(text) {
     const q = text.toLowerCase().trim();
     if (/payment|pay|paypal|upi|checkout|invoice/.test(q)) {
-      return ['We provide verified payment details after confirming your plan. You can ask for UPI or PayPal instructions; this website does not directly process payments.', '/payment/', 'Payment information ↗'];
+      return ['When enabled, plan buttons take you to a secure PayPal-hosted checkout. Otherwise request a verified link or invoice. Always check the amount and merchant on PayPal before you pay.', '/payment/', 'Payment information ↗'];
     }
     if (/price|pricing|cost|charge|plan|fee|subscription|monthly/.test(q) && /web|site|design|build|template/.test(q)) {
       return ['Website build packages: Starter $399, Growth $699 and Pro $999 (one-time). Optional hosting and care plans are quoted separately.', '/#websites', 'Website packages ↗'];

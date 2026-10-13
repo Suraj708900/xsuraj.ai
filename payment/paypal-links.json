@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "currency": "USD",
+  "note": "Replace null paypal_url values only with genuine checkout links copied from your own PayPal Business account. Do not insert Client Secrets, API tokens or unrelated sites.",
+  "plans": {
+    "website-starter": {
+      "label": "Website Starter",
+      "amount": "399.00",
+      "billing": "one_time",
+      "paypal_url": null
+    },
+    "website-growth": {
+      "label": "Website Growth",
+      "amount": "699.00",
+      "billing": "one_time",
+      "paypal_url": null
+    },
+    "website-pro": {
+      "label": "Website Pro",
+      "amount": "999.00",
+      "billing": "one_time",
+      "paypal_url": null
+    },
+    "voice-normal": {
+      "label": "AI Normal",
+      "amount": "499.00",
+      "billing": "monthly_subscription",
+      "paypal_url": null
+    },
+    "voice-pro": {
+      "label": "AI Pro",
+      "amount": "899.00",
+      "billing": "monthly_subscription",
+      "paypal_url": null
+    },
+    "voice-ultra-pro": {
+      "label": "AI Ultra Pro",
+      "amount": "1599.00",
+      "billing": "monthly_subscription",
+      "paypal_url": null
+    }
+  }
+}
