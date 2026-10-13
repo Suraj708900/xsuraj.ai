@@ -66,3 +66,8 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
 .hero-effects a:focus-visible,.industry-strip a:focus-visible{outline:3px solid #d8caff;outline-offset:3px}
 #feature-call-answering,#feature-appointments,#feature-faq{scroll-margin-top:110px}
 @media(max-width:760px){.industry-strip a{padding:7px 10px}}
+
+/* Easy-to-find Google Chat and Google Meet contact actions */
+.google-contact-shortcuts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:11px;margin:15px 0 7px}
+.google-contact-shortcuts a{min-width:155px;text-align:center}
+.google-contact-shortcuts a:focus-visible{outline:3px solid #d8caff;outline-offset:3px}
