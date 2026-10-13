@@ -12,7 +12,8 @@ assert.equal(config.schema_version,1);
 assert.equal(config.currency,"USD");
 assert.deepEqual(Object.keys(config.plans),keys);
 for(const key of keys) {
-  assert.equal(config.plans[key].paypal_url,null,"Do not publish invented merchant links for "+key);
+  const url=config.plans[key].paypal_url;
+  assert(url===null || (typeof url==="string" && url.startsWith("https://") && /^https:\/\/(?:www\.)?paypal\.com\//.test(url)),"Configured checkout must be a real PayPal.com URL: "+key);
   assert(html.includes('id="checkout-status-'+key+'"'),"Missing checkout status for "+key);
   assert(html.includes('data-plan="'+key+'"'),"Missing active plan button for "+key);
 }
@@ -47,7 +48,8 @@ function fixtureLinks() {
   for(const k of keys) c.plans[k].paypal_url="https://www.paypal.com/ncp/payment/FAKE_EXAMPLE_FOR_UNIT_TEST_"+k;
   return c;
 }
-const noLinks=makeHarness(config);await noLinks.events.DOMContentLoaded();
+const noLinksConfig=JSON.parse(JSON.stringify(config));for(const key of keys)noLinksConfig.plans[key].paypal_url=null;
+const noLinks=makeHarness(noLinksConfig);await noLinks.events.DOMContentLoaded();
 assert(noLinks.notice.textContent.includes("after your business payment links are connected"));
 for(const key of keys)assert.equal(noLinks.cards[key].link.href,"#payment-request-form");
 const live=makeHarness(fixtureLinks());await live.events.DOMContentLoaded();
