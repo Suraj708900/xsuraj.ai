@@ -54,12 +54,21 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="top">
+      <!-- Exact user-supplied banner artwork displays when the local optimized image file has been uploaded. The current accessible HTML hero is the automatic fallback. -->
+      <div class="hero-poster" id="hero-poster" hidden>
+        <h1 class="hero-poster-accessible-title">Turn visitors into real customers — websites and AI receptionist services</h1>
+        <img id="hero-poster-image" src="/hero-ai-suraj-design.webp" alt="AI Suraj Teach promotional illustration with a smiling AI robot, website preview, and example cards for dental clinics, healthcare, business, real estate and online stores. The promotional results depicted are illustrative." width="2048" height="689" decoding="async" fetchpriority="high">
+        <div class="hero-poster-verified" aria-label="Available website demos and service pricing"><span aria-hidden="true">✦</span> 60 Website Demos · Published Pricing</div>
+        <a class="hero-poster-hit hero-poster-hit-quote" href="/contact/?service=quote" aria-label="Get your free written quote"><span>Get your free written quote</span></a>
+        <a class="hero-poster-hit hero-poster-hit-demo" href="/templates/" aria-label="Explore 60 website design demos"><span>Explore 60 website designs</span></a>
+        <p class="hero-poster-disclaimer">Illustrative design concept: people, example sites and projected results are not verified customers, testimonials or performance guarantees.</p>
+      </div>
       <div class="container hero-inner">
         <div class="hero-top">
           <div class="hero-copy">
             <p class="eyebrow">AI RECEPTIONISTS + PREMIUM WEBSITES · Every Business</p>
-            <h1>Make a stronger <span class="gradient-text">first impression.</span></h1>
-            <p class="hero-subheadline">Turn enquiries into conversations.</p>
+            <h1>Turn visitors into <span class="gradient-text">real customers.</span></h1>
+            <p class="hero-subheadline">Make your next business conversation count.</p>
             <p class="lead">Give customers a professional website and an easier way to reach your business. Explore industry-specific designs, compare published AI receptionist plans, and request a clear written quote before you decide.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="/contact/?service=quote">Get your free written quote <span aria-hidden="true">↗</span></a>
@@ -495,5 +504,6 @@
 </script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js" defer></script>
 <script src="scenario-auth.js" defer></script>
+<script src="/hero-poster.js" defer></script>
 <script src="/site-footer.js" defer></script></body>
 </html>
