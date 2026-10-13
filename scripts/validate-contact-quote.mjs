@@ -52,4 +52,12 @@ for(const id of ['quote-gmail-link','quote-outlook-link']) {
 controls['quote-service'].value='demo';
 handlers['quote-request-form:change']();
 assert(new URL(controls['quote-gmail-link'].href).searchParams.get('su').includes('Demo request'));
+for(const service of ['meet','chat']){
+  assert(home.includes('/contact/?service='+service+'#quote-form'),'Homepage '+service+' CTA missing');
+  assert(footer.includes('/contact/?service='+service+'#quote-form'),'Footer '+service+' CTA missing');
+  assert(contact.includes('<option value="'+service+'">'),'Contact form '+service+' service missing');
+  assert(js.includes(service+': "Google'),'Contact script '+service+' subject missing');
+}
+assert(contact.includes('Google Meet booking link or Chat invitation is provided only after confirmation.'),'Must not promise unconfigured direct meeting or Chat link');
+console.log('PASS: Google Meet and Google Chat requests are selectable, prefilled and linked in homepage/footer; no fake meeting link.');
 console.log('PASS: homepage, footer, 60 templates, 8 working industry filters, 3 working benefit chips, Netlify form and browser-based Gmail/Outlook quote drafts.');

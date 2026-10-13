@@ -14,7 +14,9 @@
     quote: "General business quote",
     ai: "AI voice receptionist",
     website: "Business website design",
-    demo: "60-second demo request"
+    demo: "60-second demo request",
+    meet: "Google Meet consultation request",
+    chat: "Google Chat support request"
   };
 
   try {
@@ -39,7 +41,9 @@
 
   function updateDrafts() {
     const type = service.value;
-    const subject = type === "demo" ? "Demo request - AI Suraj Teach"
+    const subject = type === "meet" ? "Google Meet appointment request - AI Suraj Teach"
+      : type === "chat" ? "Google Chat support request - AI Suraj Teach"
+      : type === "demo" ? "Demo request - AI Suraj Teach"
       : type === "ai" ? "Quote request - AI receptionist"
       : type === "website" ? "Quote request - business website"
       : "Quote request - AI Suraj Teach";
