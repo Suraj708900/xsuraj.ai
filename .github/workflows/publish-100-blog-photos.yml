@@ -1,0 +1,33 @@
+name: Publish 100 unique topic-matched blog photos
+on:
+  push:
+    branches: [premium-home-dual-plans-unique-blog-images-20261013]
+    paths:
+      - 'blog/photo-manifest.json'
+      - 'scripts/publish-100-blog-photos.py'
+      - '.github/workflows/publish-100-blog-photos.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: premium-home-dual-plans-unique-blog-images-20261013
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download and validate 100 unique local images
+        run: python scripts/publish-100-blog-photos.py
+      - name: Commit optimized photo assets and updated blog pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/images blog/index.html blog/*/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Give every blog post a unique locally cached topic-matched photo"
+            git push origin HEAD:premium-home-dual-plans-unique-blog-images-20261013
+          fi
