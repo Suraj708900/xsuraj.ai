@@ -1,0 +1,26 @@
+name: Validate premium service sections and 100 unique blog covers
+on:
+  push:
+    branches: [main, premium-home-dual-plans-unique-blog-images-20261013]
+    paths:
+      - 'scripts/validate-premium-service-home.mjs'
+      - 'premium-service-plans.css'
+      - 'index.html'
+      - 'blog/photo-manifest.json'
+      - '.github/workflows/validate-premium-service-home.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate premium CSS, pricing links, 100 local photos and articles
+        run: node scripts/validate-premium-service-home.mjs

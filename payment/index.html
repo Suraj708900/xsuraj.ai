@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#080d1c"><link rel="canonical" href="https://xsurajteach.netlify.app/payment/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/site-footer.css">
-  <style>
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080d1c;color:#eef2ff;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
     a{color:#bdbaff}a:focus-visible{outline:3px solid #d5bd69;outline-offset:4px}
     .payment-nav{border-bottom:1px solid #293558;padding:14px 20px;background:#080d1c}
@@ -23,7 +23,7 @@
     h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.03em}
     .pay-plan-section{padding:30px 20px 65px}
     .pay-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .pay-card{border-radius:18px;border:1px solid #40527f;background:linear-gradient(150deg,#1b2545,#111a31);padding:26px;box-shadow:0 15px 45px #0003}
+    html{scroll-padding-top:24px}.pay-card:target{outline:3px solid #c0b4ff;outline-offset:5px;box-shadow:0 0 36px #5d51d673}.pay-card{border-radius:18px;border:1px solid #40527f;background:linear-gradient(150deg,#1b2545,#111a31);padding:26px;box-shadow:0 15px 45px #0003}
     .pay-card.highlight{border-color:#8e7bf5}
     .pay-card h3{margin:0 0 7px;font-size:20px}.pay-card strong{display:block;font-size:30px;color:#fff;letter-spacing:-.03em}
     .pay-card small{display:block;color:#aeb9d8;font-size:13px}
@@ -40,25 +40,25 @@
 </head>
 <body>
   <header class="payment-nav"><div><a class="brand" href="/"><img src="/robot-logo.svg" alt="">AI Suraj Teach</a><nav aria-label="Primary"><a href="/">Home</a><a href="/#pricing">AI Pricing</a><a href="/#websites">Websites</a><a href="/templates/">Templates</a></nav></div></header>
-  <main>
+  <main><p class="sr-only" id="selected-plan-note">Review your plan and request verified payment instructions by email.</p>
     <section class="pay-hero"><div class="pay-wrap">
       <span class="eyebrow">Secure next steps · Business services</span>
       <h1>Choose your plan.<br>Get verified payment details.</h1>
       <p>We offer payment arrangements by UPI or PayPal after confirming your business requirements and issuing an accurate quote. There is no instant checkout on this page. Never send money to payment details you have not verified directly with us.</p>
     </div></section>
     <section class="pay-plan-section"><div class="pay-wrap">
-      <h2>AI voice receptionist · Monthly plans</h2>
+      <h2>AI Voice Receptionist — Monthly Plans</h2>
       <div class="pay-grid">
-        <article class="pay-card"><h3>Starter</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Starter%20%24499">Request secure payment details</a></article>
-        <article class="pay-card highlight"><h3>Growth</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Growth%20%24899">Request secure payment details</a></article>
-        <article class="pay-card"><h3>Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Pro%20%241599">Request secure payment details</a></article>
+        <article class="pay-card" id="voice-normal"><h3>Normal</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Normal%20%24499">Request secure payment details</a></article>
+        <article class="pay-card highlight" id="voice-pro"><h3>Pro</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Pro%20%24899">Request secure payment details</a></article>
+        <article class="pay-card" id="voice-ultra-pro"><h3>Ultra Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Ultra%20Pro%20%241599">Request secure payment details</a></article>
       </div>
       <p class="pay-note"><strong>AI service fees:</strong> Current published terms include a $497 one-time setup fee, $0.25/min for usage over the plan limit, and 30 days notice to cancel. Verify the exact agreement before payment. Custom integrations are quoted separately.</p>
       <h2>Premium business websites · One-time build</h2>
       <div class="pay-grid">
-        <article class="pay-card"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Starter%20%24399">Request secure payment details</a></article>
-        <article class="pay-card highlight"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Growth%20%24699">Request secure payment details</a></article>
-        <article class="pay-card"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Pro%20%24999">Request secure payment details</a></article>
+        <article class="pay-card" id="website-starter"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Starter%20%24399">Request secure payment details</a></article>
+        <article class="pay-card highlight" id="website-growth"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Growth%20%24699">Request secure payment details</a></article>
+        <article class="pay-card" id="website-pro"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Pro%20%24999">Request secure payment details</a></article>
       </div>
       <p class="pay-note">Domain, hosting, monthly changes and advanced integrations are not automatically included in the one-time website build price. Confirm project scope, exclusions, applicable taxes and final invoice before sending funds.</p>
     </div></section>
