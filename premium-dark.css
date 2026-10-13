@@ -126,3 +126,31 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
   .hero-photo figcaption{font-size:.63rem}
   .hero .hero-copy h1{font-size:clamp(2.4rem,10.6vw,3.25rem)}
 }
+
+
+/* Wide promotional artwork supplied by the site owner.
+   The enhanced poster is visible only after /hero-ai-suraj-design.webp loads;
+   accessible live HTML remains as a fallback and on narrow screens. */
+.hero.hero-poster-loaded{padding-top:0}
+.hero-poster[hidden]{display:none!important}
+.hero-poster{position:relative;z-index:2;width:100%;max-width:2048px;margin:0 auto;background:#07132c;color:#f9fbff;isolation:isolate}
+.hero-poster>img{display:block;width:100%;height:auto;aspect-ratio:2048/689;object-fit:contain;background:#07132c}
+.hero-poster-accessible-title{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;clip-path:inset(50%);margin:0;padding:0;border:0}
+.hero-poster-verified{position:absolute;z-index:3;left:3.85%;top:3.5%;width:27.2%;height:9%;min-height:25px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:1px solid #8070f9;color:#e9f1ff;background:linear-gradient(100deg,#06152d 0%,#0b1c40 100%);box-shadow:0 0 0 8px #09173233;font-size:clamp(10px,1.25vw,20px);font-weight:750;letter-spacing:.005em;white-space:nowrap}
+.hero-poster-verified span{font-size:1.3em;color:#d3a4ff}
+.hero-poster-hit{position:absolute;z-index:3;display:block;border-radius:999px;cursor:pointer;color:transparent;text-decoration:none;background:transparent}
+.hero-poster-hit>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.hero-poster-hit-quote{left:4.58%;top:85.8%;width:18.65%;height:10.8%}
+.hero-poster-hit-demo{left:23.9%;top:85.8%;width:11.7%;height:10.8%}
+.hero-poster-hit:hover{background:#ffffff13;outline:2px solid #ffffff8a;outline-offset:0}
+.hero-poster-hit:focus-visible{outline:4px solid #f7d369;outline-offset:3px;background:#ffffff21}
+.hero-poster-disclaimer{position:relative;z-index:3;padding:8px 24px 10px;margin:0;text-align:center;color:#b9c4e1;font-size:.79rem;line-height:1.5;background:#081330}
+@media(min-width:861px){
+ .hero.hero-poster-loaded .hero-top{display:none}
+ .hero.hero-poster-loaded .hero-trust{margin-top:28px}
+}
+@media(max-width:860px){
+ .hero-poster{display:none!important}
+ .hero.hero-poster-loaded{padding-top:44px}
+ .hero.hero-poster-loaded .hero-top{display:grid}
+}
