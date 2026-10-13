@@ -25,3 +25,28 @@ details{background:#121b35;border:1px solid var(--line);border-radius:13px;color
 .contact{background:radial-gradient(circle at 50% 15%,#263472 0%,#0b122c 64%)}.contact .section-lead{margin-inline:auto}.founder,.contact-alt{color:#b5c4e4}
 .websites-list li,.websites-tiers li{color:#d8e1fb}
 @media(max-width:760px){.nav{flex-wrap:wrap;padding-block:8px}.nav-links{gap:.7rem;flex-wrap:wrap}.nav-links a:not(.btn){font-size:.8rem;padding:.2rem 0}.hero{padding:55px 0 65px}.hero-mascot{width:110px;margin-top:0}.hero-effects span{width:100%;justify-content:center}.section{padding:50px 0}}
+
+/* Premium usability audit: keyboard access, accessible mobile navigation, and polished depth. */
+.menu-toggle{display:none;background:#121e42;border:1px solid #6377b2;border-radius:12px;color:#fff;font:inherit;font-weight:700;cursor:pointer;padding:.55rem .85rem;gap:.4rem;align-items:center}
+.menu-toggle:focus-visible,.btn:focus-visible,.nav-links a:focus-visible{outline:3px solid #facc63;outline-offset:4px}
+.section h2{text-wrap:balance}
+.plan,.feature,.step,.stat{transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+@media(hover:hover){.plan:hover,.feature:hover,.step:hover,.stat:hover{transform:translateY(-4px);border-color:#897dff88;box-shadow:0 18px 38px #02081999}}
+.plan-featured{background:linear-gradient(155deg,#1c224a,#0d132b 72%)}
+.plan-featured:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#5e8bff,#ae4fff);border-radius:19px 19px 0 0}
+.websites-pricing,.plan,.step,.feature,.stat{color:#f4f6ff}
+.websites-from strong,.websites-tiers span{color:#f9faff}
+.offer{background:#1c2a51;color:#eaf0ff;border-color:#5464a7}
+@media(max-width:800px){
+  .nav{flex-wrap:nowrap;position:relative;min-height:70px}
+  .brand{font-size:.9rem;min-width:0}.brand span{white-space:nowrap}
+  .menu-toggle{display:inline-flex;flex-shrink:0}
+  #primary-navigation{display:none;position:absolute;top:calc(100% - 1px);left:0;right:0;background:#0b1531;border:1px solid #4e5d8b;border-radius:0 0 18px 18px;box-shadow:0 20px 40px #0009;padding:12px;z-index:100}
+  #primary-navigation.is-open{display:block}
+  #primary-navigation .nav-links{display:flex;flex-direction:column;align-items:stretch;gap:2px}
+  #primary-navigation .nav-links li,#primary-navigation .nav-links li:not(:last-child),#primary-navigation .nav-links li:has(a[href="#websites"]){display:list-item}
+  #primary-navigation .nav-links a{display:block;padding:11px 14px;font-size:1rem}
+  #primary-navigation .nav-links a.btn{margin-top:6px}
+}
+@media(max-width:380px){.brand-mark{width:34px;height:39px}.brand{font-size:.78rem}.menu-toggle{font-size:.9rem;padding:.4rem .6rem}}
+@media(prefers-reduced-motion:reduce){.plan,.feature,.step,.stat,.btn{transition:none!important;transform:none!important}}
