@@ -22,9 +22,14 @@
 .featured-demo-3 .featured-demo-header{background:linear-gradient(110deg,#f0e8ff,#faf5ff);color:#5223a0}
 .featured-demo-4 .featured-demo-header{background:linear-gradient(110deg,#fff0df,#fff9f2);color:#9e4019}
 .featured-demo-5 .featured-demo-header{background:linear-gradient(110deg,#ffe4ed,#fff5f9);color:#a20e5a}
-.featured-demo-icon{display:grid;place-items:center;background:currentColor;border-radius:12px;min-width:46px;height:45px;font-size:1.4rem;position:relative;color:#4172db}
-.featured-demo-icon:before{content:"";position:absolute;inset:0;background:#4172db;border-radius:12px;opacity:.14}
-.featured-demo-2 .featured-demo-icon{color:#1b9c65}.featured-demo-3 .featured-demo-icon{color:#873bce}.featured-demo-4 .featured-demo-icon{color:#da7929}.featured-demo-5 .featured-demo-icon{color:#d22469}
+.featured-demo-icon{display:grid;place-items:center;flex:0 0 49px;width:49px;height:49px;border-radius:15px;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#4d88f4,#245ed1);box-shadow:0 7px 17px #3c6ad03b,inset 0 1px 0 #ffffff6b}
+.featured-demo-icon::before{content:"";position:absolute;inset:1px;border-radius:14px;background:linear-gradient(140deg,#ffffff45,transparent 58%);pointer-events:none}
+.featured-demo-icon img{display:block;width:31px;height:31px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 1px 2px #0002)}
+.featured-demo-2 .featured-demo-icon{background:linear-gradient(135deg,#2ab992,#0b8269);box-shadow:0 7px 17px #12866c30,inset 0 1px 0 #ffffff6b}
+.featured-demo-3 .featured-demo-icon{background:linear-gradient(135deg,#a45cf1,#6b29c1);box-shadow:0 7px 17px #873bce30,inset 0 1px 0 #ffffff6b}
+.featured-demo-4 .featured-demo-icon{background:linear-gradient(135deg,#e39c5a,#b6622c);box-shadow:0 7px 17px #c4763030,inset 0 1px 0 #ffffff6b}
+.featured-demo-5 .featured-demo-icon{background:linear-gradient(135deg,#e04891,#ae1765);box-shadow:0 7px 17px #c7227530,inset 0 1px 0 #ffffff6b}
+.featured-demo-header>div{min-width:0}
 .featured-demo-header strong{display:block;font-size:.99rem;line-height:1.2;font-weight:850}
 .featured-demo-header small{display:block;font-size:.7rem;opacity:.76;line-height:1.45;margin-top:3px}
 .featured-demo-image{position:relative;overflow:hidden;aspect-ratio:4/4.2;background:linear-gradient(145deg,#b6c9ef,#5a86d5)}
