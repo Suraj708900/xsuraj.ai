@@ -81,3 +81,8 @@
 .voice-assistant-group .premium-plan-mark img{width:65px;height:70px;object-fit:contain;filter:drop-shadow(0 8px 8px #111e4c48)}
 .voice-assistant-group .premium-plan-recommended .premium-plan-mark img{filter:hue-rotate(25deg) drop-shadow(0 8px 8px #58388e48)}
 .voice-assistant-group .premium-plan-color-3 .premium-plan-mark img{filter:hue-rotate(135deg) drop-shadow(0 8px 8px #a9652b54)}
+
+/* Distinct, visible industry icons in featured website design cards */
+.featured-demo-icon{background:color-mix(in srgb,currentColor 13%,white)!important;isolation:isolate;flex-shrink:0}
+.featured-demo-icon:before{display:none!important}
+.featured-demo-icon svg{width:28px;height:28px;display:block;position:relative;z-index:1;stroke:currentColor}
