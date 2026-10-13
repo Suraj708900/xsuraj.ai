@@ -15,8 +15,8 @@
           '<a class="ast-pill ast-pill-primary" href="/payment/">Payment &amp; Get Started <span aria-hidden="true">↗</span></a>',
           '<a class="ast-pill ast-pill-outline" href="/#pricing">See pricing</a>',
         '</div>',
-        '<p class="ast-small">Questions? <a href="mailto:kamdevsuraj03@gmail.com?subject=Website%20or%20AI%20service%20quote">Email us</a> or <a href="/#contact">get a quote</a>.</p>',
-        '<p class="ast-owner"><strong>Suraj Kamdev, founder</strong> <span aria-hidden="true">·</span> <a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a></p>',
+        '<p class="ast-small">Questions? <a href="/contact/?service=quote">Email us</a> or <a href="/contact/?service=quote">get a quote</a>.</p>',
+        '<p class="ast-owner"><strong>Suraj Kamdev, founder</strong> <span aria-hidden="true">·</span> <a href="/contact/">kamdevsuraj03@gmail.com</a></p>',
       '</div>',
     '</section>',
     '<footer class="ast-footer" aria-label="AI Suraj Teach site footer">',
@@ -46,16 +46,16 @@
           '<a href="/#websites">Websites</a>',
           '<a href="/templates/">60 premium demos</a>',
           '<a href="/payment/">Payment</a>',
-          '<a href="/#contact">Contact</a>',
+          '<a href="/contact/?service=quote">Contact</a>',
           '<a href="/privacy-policy/">Privacy policy</a>',
           '<a href="/feed.xml">RSS feed</a>',
         '</nav>',
         '<div class="ast-footer-col ast-footer-contact">',
           '<h3>Contact</h3>',
           '<p>Suraj Kamdev, founder</p>',
-          '<a href="mailto:kamdevsuraj03@gmail.com">kamdevsuraj03@gmail.com</a>',
+          '<a href="/contact/">kamdevsuraj03@gmail.com</a>',
           '<p>Mahadev Asthan Paijawa, Patna, Bihar 800007, India</p>',
-          '<a class="ast-contact-cta" href="mailto:kamdevsuraj03@gmail.com?subject=Business%20website%20or%20AI%20receptionist">Request a quote ↗</a>',
+          '<a class="ast-contact-cta" href="/contact/?service=quote">Request a quote ↗</a>',
         '</div>',
       '</div>',
       '<div class="ast-footer-bottom">',
@@ -109,12 +109,12 @@
       return ['Browse our 100 blog posts about local business websites, AI phone assistants, customer support, SEO and workflow automation.', '/blog/', 'Browse articles ↗'];
     }
     if (/contact|email|support|founder|quote|help/.test(q)) {
-      return ['Contact the founder via kamdevsuraj03@gmail.com. Share your business type and preferred service to request a quote.', 'mailto:kamdevsuraj03@gmail.com?subject=Business%20service%20inquiry', 'Send an email ↗'];
+      return ['Contact the founder via kamdevsuraj03@gmail.com. Share your business type and preferred service to request a quote.', '/contact/?service=quote', 'Send an email ↗'];
     }
     if (/price|pricing|cost|charge|plan|fee/.test(q)) {
       return ['AI receptionist plans start at $499/month. Website builds start at $399 one-time. Choose a category on the pricing page for full details.', '/#pricing', 'Compare pricing ↗'];
     }
-    return ['I am a quick FAQ helper, not a live AI model. I can answer questions about pricing, AI receptionists, website templates and contact details.', '/#contact', 'Contact our team ↗'];
+    return ['I am a quick FAQ helper, not a live AI model. I can answer questions about pricing, AI receptionists, website templates and contact details.', '/contact/', 'Contact our team ↗'];
   }
 
   function install() {
