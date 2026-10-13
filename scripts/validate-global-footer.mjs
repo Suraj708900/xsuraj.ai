@@ -52,7 +52,7 @@ assert.equal(panel.hidden,false,'Assistant should open');
 events.get('quick:click')();
 assert(answer.textContent.includes('$399'),'Website quick answer missing pricing');
 input.value='PayPal payment options';events.get('form:submit')({preventDefault(){}});
-assert(answer.textContent.includes('UPI or PayPal'),'Payment guidance missing');
+assert(answer.textContent.includes('PayPal-hosted checkout') && answer.textContent.includes('invoice'),'Payment guidance missing');
 assert.equal(input.value,'','Ask field should clear after submitting');
 events.get('close:click')();
 assert.equal(panel.hidden,true,'Assistant should close');
