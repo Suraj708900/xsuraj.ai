@@ -1,0 +1,29 @@
+name: Validate quote and contact actions
+on:
+  push:
+    branches: [main, fix-quote-email-mailto-form-20261013]
+    paths:
+      - "contact/**"
+      - "index.html"
+      - "site-footer.js"
+      - "premium-dark.css"
+      - "templates/templates.js"
+      - "scripts/validate-contact-quote.mjs"
+      - ".github/workflows/validate-contact-quote.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check contact/contact.js
+      - run: node --check templates/templates.js
+      - run: node --check site-footer.js
+      - run: node scripts/validate-contact-quote.mjs
