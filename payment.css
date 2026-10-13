@@ -103,3 +103,98 @@
 #payment {
   scroll-margin-top: 90px;
 }
+
+/* PayPal payment list */
+.paypal-list h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .35rem;
+  font-size: 1.2rem;
+}
+
+.pay-chip {
+  padding: .2rem .55rem;
+  border: 1px solid #6377b2;
+  border-radius: 999px;
+  color: #d8def3;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.pay-sub {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
+
+.pay-rows {
+  display: grid;
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pay-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: .5rem 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #0d1430;
+}
+
+.pay-row-featured {
+  border-color: #6f7fd0;
+  background: linear-gradient(145deg, #1a2350, #101735);
+}
+
+.pay-row strong {
+  display: block;
+  color: #f4f6ff;
+  font-size: .95rem;
+}
+
+.pay-row span:not(.pay-price) {
+  display: block;
+  margin-top: .2rem;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.pay-price {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.btn-small-pay {
+  min-height: 44px;
+  padding: .55rem 1rem;
+  font-size: .85rem;
+  white-space: nowrap;
+}
+
+.pay-options {
+  margin-top: 1rem;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .pay-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .pay-row .btn-small-pay {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}

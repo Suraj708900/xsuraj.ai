@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A design preview of 20 fictional business scenarios. These examples are not customer testimonials, verified results, or genuine reviews.">
-  <meta name="theme-color" content="#0f766e">
+  <meta name="theme-color" content="#060b1a">
   <title>Illustrative Customer Scenarios — Preview | XSurajTeach</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../premium-dark.css">
   <link rel="stylesheet" href="showcase.css">
   <script src="showcase.js" defer></script>
 </head>
@@ -45,15 +46,26 @@
       <div class="showcase-toolbar">
         <div>
           <p class="section-overline">The scenario collection</p>
-          <h2 id="stories-title">Small details. Real-world possibilities.</h2>
+          <h2 id="stories-title">20 Illustrative Business Scenarios</h2>
           <p class="collection-note">20 fictional profiles · 10 USA · 10 India</p>
         </div>
-        <div class="country-filters" role="group" aria-label="Filter fictional scenarios by country" hidden>
-          <button type="button" data-filter="all" aria-pressed="true" aria-controls="scenario-grid">All <span>20</span></button>
-          <button type="button" data-filter="USA" aria-pressed="false" aria-controls="scenario-grid">USA <span>10</span></button>
-          <button type="button" data-filter="India" aria-pressed="false" aria-controls="scenario-grid">India <span>10</span></button>
+        <div class="scenario-filters" hidden>
+          <label for="filter-country">Country</label>
+          <select id="filter-country" aria-controls="scenario-grid">
+            <option value="all">All countries</option>
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+          </select>
+          <label for="filter-service">Service</label>
+          <select id="filter-service" aria-controls="scenario-grid">
+            <option value="all">All services</option>
+          </select>
         </div>
       </div>
+      <aside class="scenario-summary" aria-labelledby="summary-title">
+        <p id="summary-title"><span aria-hidden="true">✦</span> Smart Scenario Summary</p>
+        <p>Explore how an AI receptionist, business website, or FAQ assistant might support calls, inquiries, and customer journeys. Outcomes depend on each business's setup.</p>
+      </aside>
       <p id="scenario-status" class="scenario-status" role="status" aria-live="polite" aria-atomic="true">Showing all 20 fictional scenarios. Ratings and dates are illustrative only.</p>
       <div id="scenario-grid" class="scenario-grid">
         <article class="scenario-card scenario-card-featured" data-country="USA" aria-labelledby="scenario-01">

@@ -1,37 +1,47 @@
 (() => {
   const cards = Array.from(document.querySelectorAll('.scenario-card'));
-  const filters = document.querySelector('.country-filters');
-  const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+  const filters = document.querySelector('.scenario-filters');
+  const countrySelect = document.getElementById('filter-country');
+  const serviceSelect = document.getElementById('filter-service');
   const loadMoreButton = document.getElementById('scenario-load-more');
   const status = document.getElementById('scenario-status');
 
-  if (!cards.length || !filters || !loadMoreButton || !status) return;
+  if (!cards.length || !filters || !countrySelect || !serviceSelect || !loadMoreButton || !status) return;
 
   const pageSize = 6;
-  let activeCountry = 'all';
   let visibleLimit = pageSize;
 
+  cards.forEach(card => {
+    card.dataset.service = card.querySelector('.service-tag')?.textContent.trim() || '';
+  });
+  [...new Set(cards.map(card => card.dataset.service).filter(Boolean))].sort().forEach(service => {
+    serviceSelect.add(new Option(service, service));
+  });
+
   function render() {
-    const matchingCards = cards.filter(card => activeCountry === 'all' || card.dataset.country === activeCountry);
+    const country = countrySelect.value;
+    const service = serviceSelect.value;
+    const matchingCards = cards.filter(card =>
+      (country === 'all' || card.dataset.country === country) &&
+      (service === 'all' || card.dataset.service === service));
     const visibleCards = new Set(matchingCards.slice(0, visibleLimit));
 
     cards.forEach(card => {
       card.hidden = !visibleCards.has(card);
     });
 
-    filterButtons.forEach(button => {
-      button.setAttribute('aria-pressed', String(button.dataset.filter === activeCountry));
-    });
-
-    loadMoreButton.hidden = visibleCards.size >= matchingCards.length;
-    const countryLabel = activeCountry === 'all' ? '' : ` from ${activeCountry}`;
-    status.textContent = `Showing ${visibleCards.size} of ${matchingCards.length} fictional scenarios${countryLabel}. Ratings and dates are illustrative only.`;
+    const remaining = matchingCards.length - visibleCards.size;
+    loadMoreButton.hidden = remaining <= 0;
+    loadMoreButton.firstChild.textContent = `Load more (${remaining}) `;
+    const filterLabel = [country !== 'all' && `from ${country}`, service !== 'all' && `for ${service}`].filter(Boolean).join(' ');
+    status.textContent = matchingCards.length
+      ? `Showing ${visibleCards.size} of ${matchingCards.length} fictional scenarios${filterLabel ? ` ${filterLabel}` : ''}. Ratings and dates are illustrative only.`
+      : 'No fictional scenarios match these filters. Try another country or service.';
     return matchingCards;
   }
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      activeCountry = button.dataset.filter;
+  [countrySelect, serviceSelect].forEach(select => {
+    select.addEventListener('change', () => {
       visibleLimit = pageSize;
       render();
     });
