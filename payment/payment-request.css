@@ -19,7 +19,6 @@
 .payment-agreement{display:flex;gap:11px;align-items:start;color:#d2daf0;font-size:.81rem;line-height:1.65;cursor:pointer}
 .payment-agreement input{width:18px;height:18px;flex:0 0 18px;accent-color:#8764ef;margin:3px 0 0}
 .payment-agreement a{color:#c2bbff;text-decoration:underline}
-.payment-data-note{color:#e8cbb6;font-size:.79rem;margin:13px 0 17px}
 .payment-form-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;min-height:49px;background:linear-gradient(95deg,#3272ff,#8955f5);border-radius:999px;color:white;cursor:pointer;padding:12px 22px;font:800 .92rem/1.35 system-ui,sans-serif;box-shadow:0 7px 24px #5d50dd55}
 .payment-form-submit:hover{filter:brightness(1.1)}
 .payment-form-note{font-size:.76rem;color:#aebee0;line-height:1.7;margin:14px 0 0}
