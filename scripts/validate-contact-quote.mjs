@@ -13,12 +13,20 @@ for(const id of ['dental','salon','restaurant','retail','professional','educatio
 for(const key of ['dental','salon','restaurant','retail','professional','education','travel','technology'])assert(templates.includes(key+':'),'Gallery filter missing '+key);
 assert(css.includes('.hero-effects a')&&css.includes('.industry-strip a'),'Clickable chip styles missing');
 
-assert(home.includes('Make a stronger <span class="gradient-text">first impression.</span>'),'Trust-led hero headline missing');
-assert(home.includes('Turn enquiries into conversations.'),'Customer-focused hero subheadline missing');
+assert(home.includes('Turn visitors into <span class="gradient-text">real customers.</span>'),'Requested hero headline missing');
+assert(home.includes('Make your next business conversation count.'),'Clear hero subheadline missing');
 assert(home.includes('class="hero-photo"')&&home.includes('Illustrative stock photo. Not a customer testimonial.'),'Hero needs a clearly described business photo without false endorsements');
 for(const item of ['60 website demo designs','Published service pricing','Written quotes by email'])assert(home.includes(item),'Verifiable hero trust point missing: '+item);
 assert(home.includes('Get your free written quote')&&home.includes('Explore 60 website demos'),'Hero CTAs should provide clear next steps');
 assert(css.includes('.hero-top{display:grid')&&css.includes('@media(max-width:740px)'), 'Hero responsive photo layout missing');
+const artJs=read('hero-poster.js');
+assert(home.includes('src="/hero-ai-suraj-design.webp"'),'The supplied screenshot asset path must be configured');
+assert(home.includes('id="hero-poster" hidden') && artJs.includes('image.addEventListener("error"'),'Missing safe fallback when promotional image has not been uploaded');
+assert(home.includes('class="hero-poster-hit hero-poster-hit-quote"')&&home.includes('class="hero-poster-hit hero-poster-hit-demo"'),'The screenshot CTA buttons must remain clickable');
+assert(home.includes('projected results are not verified customers, testimonials or performance guarantees'),'Promotional design must disclose illustrative examples');
+assert(css.includes('.hero-poster-verified')&&css.includes('.hero-poster-hit-quote')&&css.includes('.hero.hero-poster-loaded'),'Accessible verified label, working hitboxes and responsive banner styles missing');
+new vm.Script(artJs);
+
 
 assert(contact.includes('name="website-quote-request"')&&contact.includes('data-netlify="true"')&&contact.includes('name="form-name" value="website-quote-request"'),'Native Netlify form missing');
 assert(contact.includes('netlify-honeypot="bot-field"')&&contact.includes('name="bot-field"'),'Spam protection missing');
