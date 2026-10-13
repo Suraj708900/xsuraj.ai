@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Request a Quote | AI Suraj Teach</title>
+  <meta name="description" content="Request a free written quote for business websites or AI voice receptionists. Contact AI Suraj Teach using a simple form, Gmail, or Outlook.">
+  <meta name="theme-color" content="#090e20">
+  <link rel="canonical" href="https://xsurajteach.netlify.app/contact/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/site-footer.css">
+  <link rel="stylesheet" href="/contact/contact.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to contact form</a>
+  <header class="contact-header">
+    <a class="contact-brand" href="/"><img src="/robot-logo.svg" width="44" height="49" alt=""> AI Suraj Teach</a>
+    <nav aria-label="Contact navigation">
+      <a href="/">Home</a>
+      <a href="/templates/">Website designs</a>
+      <a href="/payment/">Plans</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="contact-hero" aria-labelledby="contact-heading">
+      <div class="contact-wrap">
+        <p class="contact-kicker">LET'S BUILD SOMETHING GREAT</p>
+        <h1 id="contact-heading">Request a <span>free quote.</span></h1>
+        <p>Tell us what your business needs. Send your request right here—no email app required. Or open Gmail / Outlook with a ready-to-send message.</p>
+        <p class="contact-safe-note">A quote request is free. This page does not collect payments or credit card details.</p>
+      </div>
+    </section>
+
+    <section class="contact-main" aria-label="Contact options">
+      <div class="contact-wrap contact-grid">
+        <div class="contact-card" id="quote-form">
+          <h2>Tell us about your project</h2>
+          <p class="contact-intro">We will review your details and reply to the email address you provide. All fields marked * are required.</p>
+          <form id="quote-request-form" name="website-quote-request" action="/contact/thanks/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="website-quote-request">
+            <p class="contact-honeypot"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <div class="contact-field">
+              <label for="quote-service">What do you need? <span aria-hidden="true">*</span></label>
+              <select id="quote-service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="quote">General business quote</option>
+                <option value="ai">AI voice receptionist</option>
+                <option value="website">Business website design</option>
+                <option value="demo">Request a 60-second demo</option>
+              </select>
+            </div>
+            <div class="contact-fields-two">
+              <div class="contact-field">
+                <label for="quote-name">Your name <span aria-hidden="true">*</span></label>
+                <input id="quote-name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Full name" required>
+              </div>
+              <div class="contact-field">
+                <label for="quote-email">Your email <span aria-hidden="true">*</span></label>
+                <input id="quote-email" name="email" type="email" autocomplete="email" maxlength="180" placeholder="you@business.com" required>
+              </div>
+            </div>
+            <div class="contact-field">
+              <label for="quote-business">Business name (optional)</label>
+              <input id="quote-business" name="business" type="text" autocomplete="organization" maxlength="150" placeholder="Your company or business name">
+            </div>
+            <div class="contact-field">
+              <label for="quote-message">Project details <span aria-hidden="true">*</span></label>
+              <textarea id="quote-message" name="message" maxlength="2000" rows="5" placeholder="Your business type, services needed, city/country, features and preferred plan" required></textarea>
+            </div>
+            <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="agreed" required><span>I agree to be contacted about my request. See the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
+            <p class="contact-warning">Do not include passwords, bank details, card numbers, or patient/medical information.</p>
+            <button class="contact-submit" type="submit">Send my quote request <span aria-hidden="true">↗</span></button>
+            <p class="contact-small">Website form delivery requires Netlify Forms to be enabled on the deployed site. If the form doesn't submit, use Gmail or Outlook on the right instead.</p>
+          </form>
+        </div>
+        <aside class="contact-aside" aria-labelledby="contact-alternatives">
+          <p class="contact-kicker">NO MAIL APP REQUIRED</p>
+          <h2 id="contact-alternatives">Prefer your inbox?</h2>
+          <p>Use the same request in your browser. Gmail and Outlook open a new email draft; <strong>you must press Send</strong> yourself.</p>
+          <a id="quote-gmail-link" class="contact-outlink" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kamdevsuraj03%40gmail.com&amp;su=Quote%20request%20-%20AI%20Suraj%20Teach" target="_blank" rel="noopener noreferrer">Open Gmail <span aria-hidden="true">↗</span></a>
+          <a id="quote-outlook-link" class="contact-outlink" href="https://outlook.live.com/mail/0/deeplink/compose?to=kamdevsuraj03%40gmail.com&amp;subject=Quote%20request%20-%20AI%20Suraj%20Teach" target="_blank" rel="noopener noreferrer">Open Outlook <span aria-hidden="true">↗</span></a>
+          <p class="contact-copy-label">Or copy our email address</p>
+          <div class="contact-copy"><span id="quote-email-address">kamdevsuraj03@gmail.com</span><button id="quote-copy-email" type="button">Copy</button></div>
+          <p id="quote-copy-result" class="contact-copy-result" role="status" aria-live="polite"></p>
+          <div class="contact-info">
+            <strong>How this works</strong>
+            <p>Select AI receptionist, website design, or demo. Fill in your details and either submit the form or open the prepared message in Gmail / Outlook.</p>
+          </div>
+          <p class="contact-small">We never ask for your email password. This is a business inquiry, not a payment checkout.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="/contact/contact.js" defer></script>
+  <script src="/site-footer.js" defer></script>
+</body>
+</html>
