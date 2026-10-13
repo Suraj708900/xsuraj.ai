@@ -1,0 +1,48 @@
+/* Premium standalone showcase adapted from the existing fictional preview. */
+.premium-scenarios{background:linear-gradient(150deg,#0b1430,#0d1026);border-block:1px solid #3b497b}
+.premium-scenarios h2{text-align:left;margin-bottom:.5rem}
+.premium-scenarios [hidden],.auth-actions [hidden]{display:none!important}
+.fiction-disclosure{padding:14px 18px;border-left:3px solid #a17bff;background:#181d41;color:#e5dfff;border-radius:10px;max-width:880px;font-size:.9rem}
+.scenario-filters{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;margin:1.5rem 0;color:#dce5ff}
+.country-filters{display:flex;gap:7px;flex-wrap:wrap}
+.country-filters button,#service-filter{font:inherit;padding:.7rem .9rem;border-radius:11px;border:1px solid #6171ac;background:#141f42;color:#eef2ff;min-height:44px;cursor:pointer}
+.country-filters button[aria-pressed="true"]{background:#6857d9;border-color:#c1b5ff;color:#fff}
+#service-filter{max-width:100%}
+.auth-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.7rem;margin:1rem auto}.auth-status{font-size:.85rem;color:#f4d5aa}.auth-actions .btn{cursor:pointer;font:inherit}.auth-actions .btn:disabled{opacity:.5;cursor:not-allowed}#auth-user{color:#ccd8fa;font-size:.86rem}
+.scenario-status { color: var(--muted); font-size: .76rem; margin: 1.3rem 0 1rem; }
+.scenario-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.scenario-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #dfe8e3; border-radius: 18px; padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 3px 14px rgba(24, 56, 43, .025); transition: transform .18s ease, box-shadow .18s ease; min-width: 0; }
+.scenario-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(24, 56, 43, .06); }
+.scenario-card-featured { background: #f0f8f4; border-color: #b9d9c9; }
+.card-topline { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .6rem; margin-bottom: 1.5rem; }
+.service-tag { background: #edf5f0; color: #285a48; border-radius: 6px; font-size: .68rem; padding: .25rem .55rem; font-weight: 650; }
+.scenario-card-featured .service-tag { background: #dcece1; }
+.fiction-label { font-size: .66rem; color: var(--muted); letter-spacing: .025em; }
+.scenario-card h3 { font-size: 1.18rem; letter-spacing: -.02em; margin-bottom: .7rem; }
+.scenario-story { color: #405348; font-size: .92rem; line-height: 1.8; margin-bottom: 1.7rem; }
+.scenario-person { display: flex; gap: .8rem; align-items: center; margin-top: auto; margin-bottom: 1.3rem; }
+.avatar { width: 54px; height: 54px; border-radius: 50%; flex-shrink: 0; }
+.scenario-person strong { display: block; font-size: .88rem; font-weight: 700; }
+.scenario-person span { display: block; color: var(--muted); font-size: .76rem; line-height: 1.55; }
+.scenario-person .profile-note { color: #596b61; font-size: .68rem; }
+.card-bottom { display: flex; align-items: center; justify-content: space-between; gap: .9rem; border-top: 1px solid #e2eae5; padding-top: 1rem; }
+.example-rating { display: flex; flex-direction: column; gap: .3rem; }
+.example-rating svg { width: 90px; height: 17px; color: #926023; }
+.example-rating span { font-size: .64rem; color: #6a532d; }
+.example-date { color: var(--muted); font-size: .62rem; text-align: right; }
+.example-date time { display: block; font-size: .73rem; margin-top: .2rem; color: #405348; }
+.load-more-area { text-align: center; padding: 2rem 0; }
+.load-more-area button { font: inherit; font-size: .9rem; cursor: pointer; min-height: 48px; }
+.load-more-area button span { margin-left: .8rem; }
+.load-more-area p { color: var(--muted); font-size: .73rem; margin: 1rem 0 0; }
+
+.premium-scenarios .scenario-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.premium-scenarios .scenario-card{background:linear-gradient(150deg,#192342,#101830);border-color:#52628e;color:#f5f7ff}
+.premium-scenarios .scenario-card-featured{border-color:#8d71e9;background:linear-gradient(145deg,#23275c,#151b40)}
+.premium-scenarios .scenario-story,.premium-scenarios .scenario-person .profile-note{color:#c7d2ed}
+.premium-scenarios .scenario-person span,.premium-scenarios .fiction-label,.premium-scenarios .example-date,.premium-scenarios .example-date time,.premium-scenarios .example-rating span{color:#b9c5e9}
+.premium-scenarios .service-tag{background:#30396b;color:#e7ddff}
+.premium-scenarios .card-bottom{border-color:#465375}
+.premium-scenarios .scenario-status,.premium-scenarios .load-more-area p{color:#aebde1}
+.premium-scenarios .scenario-card[hidden]{display:none!important}
+@media(max-width:680px){.premium-scenarios .scenario-grid{grid-template-columns:1fr}}

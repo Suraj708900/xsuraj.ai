@@ -25,6 +25,7 @@
   <link rel="alternate icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M22 18c-4 0-7 3-7 8 0 4 2 6 3 10 1 5 2 12 6 12 3 0 3-8 8-8s5 8 8 8c4 0 5-7 6-12 1-4 3-6 3-10 0-5-3-8-7-8-4 0-6 2-10 2s-6-2-10-2z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="premium-dark.css">
+  <link rel="stylesheet" href="scenario-auth.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +42,7 @@
           <li><a href="#how">How it works</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#scenarios">Scenarios</a></li>
           <li><a href="#websites">Websites</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a class="btn btn-small" href="#contact">Contact</a></li>
@@ -57,6 +59,7 @@
         <p class="eyebrow">24/7 AI voice receptionist for US dental clinics</p>
         <h1>Never miss a patient<br><span class="gradient-text">call again.</span></h1>
         <p class="lead">Our AI receptionist answers your missed and after-hours calls, takes appointment requests for your team to confirm, and answers common questions like hours and insurance, day or night.</p>
+        <div class="auth-actions"><button class="btn btn-ghost" id="auth-login" type="button">Log in</button><button class="btn btn-primary" id="auth-signup" type="button">Sign up</button><button class="btn btn-ghost" id="auth-logout" type="button" hidden>Log out</button><span id="auth-user" aria-live="polite"></span></div><p id="auth-status" class="auth-status" role="status" aria-live="polite"></p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:kamdevsuraj03@gmail.com?subject=Quote%20request%20-%20AI%20receptionist">Get a quote by email</a>
           <a class="btn btn-ghost" href="#pricing">See pricing</a>
@@ -68,6 +71,167 @@
       </div>
     </section>
 
+
+<section class="section premium-scenarios" id="scenarios" aria-labelledby="scenarios-heading">
+ <div class="container">
+ <p class="eyebrow">Explore business use cases</p>
+ <h2 id="scenarios-heading">20 Premium Customer Scenarios</h2>
+ <p class="section-lead">Explore how AI receptionist and website services could support businesses in the USA and India.</p>
+ <p class="fiction-disclosure"><strong>Illustrative examples only.</strong> All 20 profiles, names, dates, ratings and scenarios are fictional. These are not real customer testimonials or verified results.</p>
+ <div class="scenario-filters" aria-label="Scenario filters">
+  <div class="country-filters" role="group" aria-label="Country">
+   <button type="button" data-country-filter="all" aria-pressed="true">All countries</button>
+   <button type="button" data-country-filter="USA" aria-pressed="false">USA</button>
+   <button type="button" data-country-filter="India" aria-pressed="false">India</button>
+  </div>
+  <label for="service-filter">Service category</label>
+  <select id="service-filter"><option value="all">All services</option><option>AI Voice Receptionist</option><option>Dental Clinic Websites</option><option>Business Websites</option><option>Customer Support</option></select>
+ </div>
+ <p id="scenario-status" class="scenario-status" role="status" aria-live="polite">20 fictional scenarios available</p>
+ <div id="scenario-grid" class="scenario-grid"><article class="scenario-card scenario-card-featured" data-country="USA" aria-labelledby="scenario-01">
+          <div class="card-topline"><span class="service-tag">AI Voice Receptionist</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-01">When the front desk closes</h3>
+          <p class="scenario-story">In this example, a small dental practice needs a calmer way to handle evening calls. An AI receptionist could explain office hours, collect an appointment request, and leave the team a clear message to review the next morning. The staff would still confirm every appointment.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#avery"></use></svg><div><strong>Avery Whitmore</strong><span>Austin, USA</span><span class="profile-note">Fictional practice manager</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-08">Oct 8, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-02">
+          <div class="card-topline"><span class="service-tag">Dental Clinic Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-02">A first visit, made less confusing</h3>
+          <p class="scenario-story">Meera's fictional clinic wants its website to answer the questions a new visitor might hesitate to ask: where to park, when the clinic opens, and how to request a consultation. A simple mobile layout could put that information within easy reach, without collecting patient health details.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#meera"></use></svg><div><strong>Meera Kulkarni</strong><span>Pune, India</span><span class="profile-note">Fictional clinic owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-07">Oct 7, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-03">
+          <div class="card-topline"><span class="service-tag">Business Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-03">A local workshop, online</h3>
+          <p class="scenario-story">Picture a furniture repair workshop with no website. A clear service list, a few owner-supplied project photos, and a tap-to-call button could give nearby customers a useful starting point. Nolan would prefer that to a complicated site he rarely has time to update.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#nolan"></use></svg><div><strong>Nolan Mercer</strong><span>Portland, USA</span><span class="profile-note">Fictional workshop owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-06">Oct 6, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-04">
+          <div class="card-topline"><span class="service-tag">Customer Support</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-04">A useful handoff, not another queue</h3>
+          <p class="scenario-story">For Arjun's imaginary home-services business, the important detail is knowing why someone called. A support workflow could collect the service type and a preferred callback time, then route the request to a person. Anything unusual would need human attention, not a guessed answer.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#arjun"></use></svg><div><strong>Arjun Menon</strong><span>Kochi, India</span><span class="profile-note">Fictional operations lead</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-05">Oct 5, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-05">
+          <div class="card-topline"><span class="service-tag">Dental Clinic Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-05">Directions before decoration</h3>
+          <p class="scenario-story">In this scenario, a neighborhood dental office wants a website that feels welcoming without hiding the basics. Camille's priorities would be readable text, accurate contact details, and an obvious appointment-request link. A gallery could wait; clear directions could not.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#camille"></use></svg><div><strong>Camille Hartwell</strong><span>Denver, USA</span><span class="profile-note">Fictional dental office coordinator</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-03">Oct 3, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-06">
+          <div class="card-topline"><span class="service-tag">AI Voice Receptionist</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-06">Busy hands, a missed call</h3>
+          <p class="scenario-story">Imagine a salon team that cannot always step away from a client. An AI receptionist could take a message and explain the published hours. Riya would want the greeting to be brief and transparent about being AI, with scheduling decisions left to her team.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#riya"></use></svg><div><strong>Riya Bhatia</strong><span>Jaipur, India</span><span class="profile-note">Fictional salon owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-10-02">Oct 2, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-07">
+          <div class="card-topline"><span class="service-tag">Customer Support</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-07">Knowing when to ask a person</h3>
+          <p class="scenario-story">Ellis's fictional repair company gets routine questions and complicated ones. The support assistant could cover opening times and service areas, while passing warranty disputes to the owner. In this example, setting that boundary matters more than answering every question automatically.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#ellis"></use></svg><div><strong>Ellis Bradford</strong><span>Raleigh, USA</span><span class="profile-note">Fictional repair business owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-30">Sep 30, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-08">
+          <div class="card-topline"><span class="service-tag">Business Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-08">A portfolio that travels well</h3>
+          <p class="scenario-story">For an imagined interior design studio, Dev would want prospective clients to browse a small portfolio on their phones. A lightweight site could pair each project with a short explanation and a straightforward enquiry link. The studio would supply and approve the project photographs.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#dev"></use></svg><div><strong>Dev Narayanan</strong><span>Bengaluru, India</span><span class="profile-note">Fictional design studio founder</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-29">Sep 29, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-09">
+          <div class="card-topline"><span class="service-tag">AI Voice Receptionist</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-09">A Saturday request, not a promise</h3>
+          <p class="scenario-story">A fictional dental practice receives a call about a Monday appointment over the weekend. The assistant could record the request and explain that availability needs staff confirmation. Maren would want that distinction made clearly, rather than giving the caller a booking that does not exist.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#maren"></use></svg><div><strong>Maren Fletcher</strong><span>Madison, USA</span><span class="profile-note">Fictional front desk lead</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-27">Sep 27, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-10">
+          <div class="card-topline"><span class="service-tag">Dental Clinic Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-10">Easy to read on a small screen</h3>
+          <p class="scenario-story">Kavya's imagined clinic needs to make its opening hours and location easier to find. A mobile-first page could give those details room to breathe. She would also ask for a plain explanation of how appointment requests are handled, rather than a crowded list of promises.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#kavya"></use></svg><div><strong>Kavya Iyer</strong><span>Chennai, India</span><span class="profile-note">Fictional clinic administrator</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-25">Sep 25, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-11">
+          <div class="card-topline"><span class="service-tag">Business Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-11">A menu that is not a blurry photo</h3>
+          <p class="scenario-story">Jonah's fictional café wants a readable menu, current hours, and a map link. A modest business website could cover all three. Seasonal items would still need regular updates from the owner; no website can keep an unreported change accurate by itself.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#jonah"></use></svg><div><strong>Jonah Prescott</strong><span>Seattle, USA</span><span class="profile-note">Fictional café owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-23">Sep 23, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-12">
+          <div class="card-topline"><span class="service-tag">Customer Support</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-12">The context behind a callback</h3>
+          <p class="scenario-story">In this fictional example, a training centre receives enquiries while classes are running. Kabir could use a support workflow to capture the course someone is interested in and when they can speak. Fees and admission decisions would stay with the centre's staff.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#kabir"></use></svg><div><strong>Kabir Sethi</strong><span>New Delhi, India</span><span class="profile-note">Fictional training centre manager</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-21">Sep 21, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-13">
+          <div class="card-topline"><span class="service-tag">Dental Clinic Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-13">One practice, two sets of hours</h3>
+          <p class="scenario-story">An imagined practice has two locations with different schedules. Tessa would need each address and phone number clearly separated, especially on mobile. The site could make it easier to choose the right office without implying that an enquiry is a confirmed appointment.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#tessa"></use></svg><div><strong>Tessa Langford</strong><span>Charlotte, USA</span><span class="profile-note">Fictional practice operations manager</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-19">Sep 19, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-14">
+          <div class="card-topline"><span class="service-tag">AI Voice Receptionist</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-14">Covering a lunch-hour gap</h3>
+          <p class="scenario-story">Sana's fictional front desk cannot answer every call during lunch. An assistant could explain when staff will return and take a callback request. The team would first test the greeting, disclosure, and handoff with fictional calls before considering any real use.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#sana"></use></svg><div><strong>Sana Qureshi</strong><span>Hyderabad, India</span><span class="profile-note">Fictional office coordinator</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-17">Sep 17, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-15">
+          <div class="card-topline"><span class="service-tag">Customer Support</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-15">A short answer is sometimes enough</h3>
+          <p class="scenario-story">For Graham's imaginary landscaping business, callers often just want to know which neighborhoods are served. A support assistant could answer from an approved service-area list. A custom quote, however, would need the team to review the work involved.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#graham"></use></svg><div><strong>Graham Bellamy</strong><span>Columbus, USA</span><span class="profile-note">Fictional landscaping owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-15">Sep 15, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-16">
+          <div class="card-topline"><span class="service-tag">Business Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-16">A small shop's digital front door</h3>
+          <p class="scenario-story">Imagine a tailoring shop that mainly serves nearby families. Pranav would choose a compact website with alteration services, opening hours, and a contact link over a full online store. That scope could suit the business without adding an unneeded payment system.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#pranav"></use></svg><div><strong>Pranav Deshmukh</strong><span>Nagpur, India</span><span class="profile-note">Fictional tailoring shop owner</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-13">Sep 13, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-17">
+          <div class="card-topline"><span class="service-tag">AI Voice Receptionist</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-17">Clear boundaries for urgent calls</h3>
+          <p class="scenario-story">For an imagined dental office, Leona would make emergency guidance a key part of setup. The assistant could follow an approved instruction to direct an emergency caller to 911 or the designated emergency line. It would not diagnose symptoms or offer clinical advice.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#leona"></use></svg><div><strong>Leona Ashford</strong><span>Phoenix, USA</span><span class="profile-note">Fictional practice administrator</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-11">Sep 11, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-18">
+          <div class="card-topline"><span class="service-tag">Dental Clinic Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-18">Keeping clinic details current</h3>
+          <p class="scenario-story">In this fictional clinic, holiday hours change more often than the rest of the website. Nandita would value an agreed update process and a visible contact route. Accurate, owner-approved information would matter more than decorative features.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#nandita"></use></svg><div><strong>Nandita Bose</strong><span>Kolkata, India</span><span class="profile-note">Fictional clinic manager</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#four-stars"></use></svg><span>Example rating: 4/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-09">Sep 9, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="USA" aria-labelledby="scenario-19">
+          <div class="card-topline"><span class="service-tag">Business Websites</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-19">A service page with a next step</h3>
+          <p class="scenario-story">Silas's imagined cleaning company wants visitors to understand the difference between a regular clean and a one-off request. A well-organized service page could explain the options and invite an enquiry. Pricing would remain a conversation when the job needs a custom quote.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#silas"></use></svg><div><strong>Silas Rowan</strong><span>Nashville, USA</span><span class="profile-note">Fictional cleaning company founder</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-07">Sep 7, 2026</time></span></div>
+        </article>
+        <article class="scenario-card" data-country="India" aria-labelledby="scenario-20">
+          <div class="card-topline"><span class="service-tag">Customer Support</span><span class="fiction-label">Fictional scenario</span></div>
+          <h3 id="scenario-20">A follow-up that starts with context</h3>
+          <p class="scenario-story">In Anika's fictional small agency, enquiries arrive while the team is in meetings. A support workflow could capture a short project description and a preferred contact method. A person would then decide what is feasible and discuss the next steps, rather than letting AI commit to a deadline.</p>
+          <div class="scenario-person"><svg class="avatar" viewBox="0 0 80 80" aria-hidden="true"><use href="preview-scenarios/avatars.svg#anika"></use></svg><div><strong>Anika Trivedi</strong><span>Ahmedabad, India</span><span class="profile-note">Fictional agency co-founder</span></div></div>
+          <div class="card-bottom"><span class="example-rating"><svg viewBox="0 0 100 18" aria-hidden="true"><use href="preview-scenarios/avatars.svg#five-stars"></use></svg><span>Example rating: 5/5</span></span><span class="example-date">Illustrative date <time datetime="2026-09-05">Sep 5, 2026</time></span></div>
+        </article>
+</div>
+ <div class="load-more-area"><button id="scenario-load-more" class="btn btn-ghost" type="button" hidden>Load more scenarios ↓</button><p>These cards are educational examples, not reviews.</p></div>
+ </div>
+</section>
     <!-- Problem -->
     <section class="section section-alt" id="problem" aria-labelledby="problem-title">
       <div class="container">
@@ -297,5 +461,7 @@
     });
   })();
 </script>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js" defer></script>
+<script src="scenario-auth.js" defer></script>
 </body>
 </html>
