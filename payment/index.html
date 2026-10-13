@@ -36,29 +36,35 @@
     .steps li::before{content:counter(step);width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#5651b6;color:#fff;font-weight:800;margin-bottom:14px}
     .steps li strong{display:block;color:#fff;margin-bottom:8px}
     @media(max-width:740px){.pay-grid,.steps ol{grid-template-columns:1fr}.pay-hero{padding:55px 18px 38px}}
-  </style>
+  
+/* PayPal hosted checkout readiness and safe pending status */
+.pay-status-banner{max-width:1110px;margin:20px auto 0;padding:13px 20px;border:1px solid #6370ba;border-radius:13px;background:#172854;color:#e0e7ff;font-size:.91rem}
+.checkout-plan-status{margin:12px 0 0!important;min-height:0!important;font-size:.77rem!important;color:#b8c6e3!important}
+@media(max-width:740px){.pay-status-banner{margin-inline:15px}}
+</style>
 </head>
 <body>
   <header class="payment-nav"><div><a class="brand" href="/"><img src="/robot-logo.svg" alt="">AI Suraj Teach</a><nav aria-label="Primary"><a href="/">Home</a><a href="/#pricing">AI Pricing</a><a href="/#websites">Websites</a><a href="/templates/">Templates</a></nav></div></header>
   <main><p class="sr-only" id="selected-plan-note">Review your plan and request verified payment instructions on the website or by browser email.</p>
     <section class="pay-hero"><div class="pay-wrap">
-      <span class="eyebrow">Secure next steps · Business services</span>
-      <h1>Choose your plan.<br>Get verified payment details.</h1>
-      <p>We offer payment arrangements by UPI or PayPal after confirming your business requirements and issuing an accurate quote. There is no instant checkout on this page. Never send money to payment details you have not verified directly with us.</p>
+      <span class="eyebrow">PayPal-hosted payment options · Business services</span>
+      <h1>Choose your plan.<br>Pay securely with PayPal.</h1>
+      <p>Choose one of the six plans below. Once its verified PayPal checkout link is connected, clicking the plan button opens PayPal's secure payment page. If a plan is not yet connected, you can request an invoice instead. Always confirm the amount and merchant before paying.</p>
     </div></section>
+    <div class="pay-status-banner" id="paypal-checkout-status" role="status" aria-live="polite">Checking PayPal checkout availability…</div>
     <section class="pay-plan-section"><div class="pay-wrap">
       <h2>AI Voice Receptionist — Monthly Plans</h2>
       <div class="pay-grid">
-        <article class="pay-card" id="voice-normal"><h3>Normal</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="#payment-request-form" data-plan="voice-normal">Request secure payment details</a></article>
-        <article class="pay-card highlight" id="voice-pro"><h3>Pro</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="#payment-request-form" data-plan="voice-pro">Request secure payment details</a></article>
-        <article class="pay-card" id="voice-ultra-pro"><h3>Ultra Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="#payment-request-form" data-plan="voice-ultra-pro">Request secure payment details</a></article>
+        <article class="pay-card" id="voice-normal"><h3>Normal</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="#payment-request-form" data-plan="voice-normal">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-voice-normal">PayPal link pending merchant setup.</p></article>
+        <article class="pay-card highlight" id="voice-pro"><h3>Pro</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="#payment-request-form" data-plan="voice-pro">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-voice-pro">PayPal link pending merchant setup.</p></article>
+        <article class="pay-card" id="voice-ultra-pro"><h3>Ultra Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="#payment-request-form" data-plan="voice-ultra-pro">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-voice-ultra-pro">PayPal link pending merchant setup.</p></article>
       </div>
-      <p class="pay-note"><strong>AI service fees:</strong> Current published terms include a $497 one-time setup fee, $0.25/min for usage over the plan limit, and 30 days notice to cancel. Verify the exact agreement before payment. Custom integrations are quoted separately.</p>
+      <p class="pay-note"><strong>AI service fees:</strong> Current published terms include a $497 one-time setup fee, $0.25/min for usage over the plan limit, and 30 days notice to cancel. <strong>For subscriptions, the $497 setup fee is in addition to monthly prices; confirm how it is charged in the actual PayPal checkout or invoice before approving.</strong> Custom integrations are quoted separately.</p>
       <h2>Premium business websites · One-time build</h2>
       <div class="pay-grid">
-        <article class="pay-card" id="website-starter"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="#payment-request-form" data-plan="website-starter">Request secure payment details</a></article>
-        <article class="pay-card highlight" id="website-growth"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="#payment-request-form" data-plan="website-growth">Request secure payment details</a></article>
-        <article class="pay-card" id="website-pro"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="#payment-request-form" data-plan="website-pro">Request secure payment details</a></article>
+        <article class="pay-card" id="website-starter"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="#payment-request-form" data-plan="website-starter">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-website-starter">PayPal link pending merchant setup.</p></article>
+        <article class="pay-card highlight" id="website-growth"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="#payment-request-form" data-plan="website-growth">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-website-growth">PayPal link pending merchant setup.</p></article>
+        <article class="pay-card" id="website-pro"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="#payment-request-form" data-plan="website-pro">Request verified payment link ↗</a><p class="checkout-plan-status" id="checkout-status-website-pro">PayPal link pending merchant setup.</p></article>
       </div>
       <p class="pay-note">Domain, hosting, monthly changes and advanced integrations are not automatically included in the one-time website build price. Confirm project scope, exclusions, applicable taxes and final invoice before sending funds.</p>
     </div></section>
@@ -67,8 +73,8 @@
       <div class="pay-wrap">
         <div class="payment-request-intro">
           <span class="eyebrow">NO EMAIL APP NEEDED</span>
-          <h2 id="payment-request-heading">Request secure payment details</h2>
-          <p>Choose your plan and send a request directly from this website. We will review the requirements, confirm the invoice and then provide verified UPI or PayPal instructions. <strong>This is not a payment checkout.</strong></p>
+          <h2 id="payment-request-heading">Request a payment link or invoice</h2>
+          <p>If a PayPal checkout button is unavailable for your plan, request a verified PayPal payment link or invoice here. This form sends an enquiry; the actual transaction takes place securely on PayPal.</p>
         </div>
         <div class="payment-request-layout">
           <div class="payment-request-card">
@@ -130,12 +136,13 @@
       </div>
     </section>
     <section class="steps"><div class="pay-wrap"><h2>How payment and setup work</h2><ol>
-      <li><strong>Choose a service</strong>Select your preferred plan or <a href="/templates/">website design</a> and complete the payment details request form.</li>
-      <li><strong>Verify your invoice</strong>We confirm the scope and provide verified UPI QR or PayPal instructions privately. This page does not collect or process payment information.</li>
+      <li><strong>Choose a service</strong>Select your preferred plan or <a href="/templates/">website design</a> and use its PayPal checkout button if available, or the enquiry form below.</li>
+      <li><strong>Verify your invoice</strong>We confirm the scope and provide an invoice or official PayPal checkout link. Online payments, when enabled, are completed on PayPal's secure website, not through this enquiry form.</li>
       <li><strong>Start after verification</strong>We begin the agreed setup after payment is verified. A payment screenshot alone is not proof of settlement.</li>
     </ol></div></section>
   </main>
   <script src="/payment/payment-request.js" defer></script>
+  <script src="/payment/paypal-checkout.js" defer></script>
   <script src="/site-footer.js" defer></script>
 </body>
 </html>
