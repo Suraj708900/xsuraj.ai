@@ -6,7 +6,7 @@
   <meta name="description" content="View AI receptionist and website build pricing. Request verified payment instructions and a written quote from AI Suraj Teach.">
   <meta name="theme-color" content="#080d1c"><link rel="canonical" href="https://xsurajteach.netlify.app/payment/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/site-footer.css">
+  <link rel="stylesheet" href="/site-footer.css"><link rel="stylesheet" href="/payment/payment-request.css">
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080d1c;color:#eef2ff;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
     a{color:#bdbaff}a:focus-visible{outline:3px solid #d5bd69;outline-offset:4px}
@@ -40,7 +40,7 @@
 </head>
 <body>
   <header class="payment-nav"><div><a class="brand" href="/"><img src="/robot-logo.svg" alt="">AI Suraj Teach</a><nav aria-label="Primary"><a href="/">Home</a><a href="/#pricing">AI Pricing</a><a href="/#websites">Websites</a><a href="/templates/">Templates</a></nav></div></header>
-  <main><p class="sr-only" id="selected-plan-note">Review your plan and request verified payment instructions by email.</p>
+  <main><p class="sr-only" id="selected-plan-note">Review your plan and request verified payment instructions on the website or by browser email.</p>
     <section class="pay-hero"><div class="pay-wrap">
       <span class="eyebrow">Secure next steps · Business services</span>
       <h1>Choose your plan.<br>Get verified payment details.</h1>
@@ -49,25 +49,93 @@
     <section class="pay-plan-section"><div class="pay-wrap">
       <h2>AI Voice Receptionist — Monthly Plans</h2>
       <div class="pay-grid">
-        <article class="pay-card" id="voice-normal"><h3>Normal</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Normal%20%24499">Request secure payment details</a></article>
-        <article class="pay-card highlight" id="voice-pro"><h3>Pro</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Pro%20%24899">Request secure payment details</a></article>
-        <article class="pay-card" id="voice-ultra-pro"><h3>Ultra Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20AI%20Ultra%20Pro%20%241599">Request secure payment details</a></article>
+        <article class="pay-card" id="voice-normal"><h3>Normal</h3><strong>$499/mo</strong><small>300 minutes monthly</small><p>Missed and after-hours calls, FAQs and appointment requests.</p><a href="#payment-request-form" data-plan="voice-normal">Request secure payment details</a></article>
+        <article class="pay-card highlight" id="voice-pro"><h3>Pro</h3><strong>$899/mo</strong><small>800 minutes monthly</small><p>More call capacity for active service businesses.</p><a href="#payment-request-form" data-plan="voice-pro">Request secure payment details</a></article>
+        <article class="pay-card" id="voice-ultra-pro"><h3>Ultra Pro</h3><strong>$1,599/mo</strong><small>2,000 minutes monthly</small><p>Higher monthly usage for larger teams.</p><a href="#payment-request-form" data-plan="voice-ultra-pro">Request secure payment details</a></article>
       </div>
       <p class="pay-note"><strong>AI service fees:</strong> Current published terms include a $497 one-time setup fee, $0.25/min for usage over the plan limit, and 30 days notice to cancel. Verify the exact agreement before payment. Custom integrations are quoted separately.</p>
       <h2>Premium business websites · One-time build</h2>
       <div class="pay-grid">
-        <article class="pay-card" id="website-starter"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Starter%20%24399">Request secure payment details</a></article>
-        <article class="pay-card highlight" id="website-growth"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Growth%20%24699">Request secure payment details</a></article>
-        <article class="pay-card" id="website-pro"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="mailto:kamdevsuraj03@gmail.com?subject=Payment%20request%20-%20Website%20Pro%20%24999">Request secure payment details</a></article>
+        <article class="pay-card" id="website-starter"><h3>Starter</h3><strong>$399</strong><small>One-time build</small><p>One-page business website. Optional ongoing care from $49/month.</p><a href="#payment-request-form" data-plan="website-starter">Request secure payment details</a></article>
+        <article class="pay-card highlight" id="website-growth"><h3>Growth</h3><strong>$699</strong><small>One-time build</small><p>Up to five pages. Optional ongoing care from $99/month.</p><a href="#payment-request-form" data-plan="website-growth">Request secure payment details</a></article>
+        <article class="pay-card" id="website-pro"><h3>Pro</h3><strong>$999</strong><small>One-time build</small><p>Up to ten pages. Optional ongoing care from $199/month.</p><a href="#payment-request-form" data-plan="website-pro">Request secure payment details</a></article>
       </div>
       <p class="pay-note">Domain, hosting, monthly changes and advanced integrations are not automatically included in the one-time website build price. Confirm project scope, exclusions, applicable taxes and final invoice before sending funds.</p>
     </div></section>
+
+    <section class="payment-request-section" id="payment-request-form" aria-labelledby="payment-request-heading">
+      <div class="pay-wrap">
+        <div class="payment-request-intro">
+          <span class="eyebrow">NO EMAIL APP NEEDED</span>
+          <h2 id="payment-request-heading">Request secure payment details</h2>
+          <p>Choose your plan and send a request directly from this website. We will review the requirements, confirm the invoice and then provide verified UPI or PayPal instructions. <strong>This is not a payment checkout.</strong></p>
+        </div>
+        <div class="payment-request-layout">
+          <div class="payment-request-card">
+            <form id="secure-payment-request-form" name="secure-payment-request" method="POST" action="/payment/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="secure-payment-request">
+              <p class="sr-only"><label>Do not fill this field: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="payment-field">
+                <label for="requested-plan">Select your plan <span aria-hidden="true">*</span></label>
+                <select id="requested-plan" name="requested-plan" required>
+                  <option value="">Choose a service plan</option>
+                  <option value="voice-normal">AI Normal — $499/month</option>
+                  <option value="voice-pro">AI Pro — $899/month</option>
+                  <option value="voice-ultra-pro">AI Ultra Pro — $1,599/month</option>
+                  <option value="website-starter">Website Starter — $399 one-time</option>
+                  <option value="website-growth">Website Growth — $699 one-time</option>
+                  <option value="website-pro">Website Pro — $999 one-time</option>
+                </select>
+              </div>
+              <p class="payment-selected" id="payment-selected" role="status" aria-live="polite">Choose a plan above or select one here.</p>
+              <div class="payment-field-grid">
+                <div class="payment-field">
+                  <label for="customer-name">Your name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="customer-name" name="customer-name" autocomplete="name" maxlength="120" placeholder="Full name" required>
+                </div>
+                <div class="payment-field">
+                  <label for="customer-email">Email address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="customer-email" name="customer-email" autocomplete="email" maxlength="180" placeholder="you@business.com" required>
+                </div>
+              </div>
+              <div class="payment-field">
+                <label for="customer-business">Business name (optional)</label>
+                <input type="text" id="customer-business" name="customer-business" autocomplete="organization" maxlength="150" placeholder="Business or organization">
+              </div>
+              <div class="payment-field">
+                <label for="customer-message">What does your business need? (optional)</label>
+                <textarea id="customer-message" name="customer-message" rows="4" maxlength="1200" placeholder="Your industry, location, preferred website design or AI call needs"></textarea>
+              </div>
+              <label class="payment-agreement"><input type="checkbox" name="privacy-acknowledgement" value="agreed" required> <span>I understand this is a request, not a payment. My details will be used to reply about my quote, as explained in the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
+              <p class="payment-data-note">Do not submit passwords, card numbers, bank details, IDs or patient medical information.</p>
+              <button class="payment-form-submit" type="submit">Send payment details request <span aria-hidden="true">↗</span></button>
+              <p class="payment-form-note">Website requests are handled through Netlify Forms when enabled on the deployed site. If submission is unavailable, use the Gmail/Outlook options alongside.</p>
+            </form>
+          </div>
+          <aside class="payment-contact-options" aria-labelledby="payment-contact-title">
+            <span class="eyebrow">OTHER WAYS TO CONTACT US</span>
+            <h3 id="payment-contact-title">Prefer email?</h3>
+            <p>You can open a new message in your browser instead of relying on a computer's default email app.</p>
+            <a id="payment-gmail-link" class="payment-contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kamdevsuraj03%40gmail.com&amp;su=Payment%20details%20request" target="_blank" rel="noopener noreferrer">Open Gmail compose <span aria-hidden="true">↗</span></a>
+            <a id="payment-outlook-link" class="payment-contact-link" href="https://outlook.live.com/mail/0/deeplink/compose?to=kamdevsuraj03%40gmail.com&amp;subject=Payment%20details%20request" target="_blank" rel="noopener noreferrer">Open Outlook compose <span aria-hidden="true">↗</span></a>
+            <p class="payment-copy-title">Or copy our email address</p>
+            <div class="payment-copy-row">
+              <span id="payment-email-address">kamdevsuraj03@gmail.com</span>
+              <button type="button" id="copy-payment-email">Copy</button>
+            </div>
+            <p id="copy-payment-result" role="status" aria-live="polite"></p>
+            <div class="payment-security-reminder"><strong>Payment safety</strong><p>Ask for a final written invoice and verify the recipient before you transfer any funds. Never send payment screenshots as proof of settlement.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
     <section class="steps"><div class="pay-wrap"><h2>How payment and setup work</h2><ol>
-      <li><strong>Choose a service</strong>Select your preferred plan or <a href="/templates/">website design</a> and email us your business requirements.</li>
+      <li><strong>Choose a service</strong>Select your preferred plan or <a href="/templates/">website design</a> and complete the payment details request form.</li>
       <li><strong>Verify your invoice</strong>We confirm the scope and provide verified UPI QR or PayPal instructions privately. This page does not collect or process payment information.</li>
       <li><strong>Start after verification</strong>We begin the agreed setup after payment is verified. A payment screenshot alone is not proof of settlement.</li>
     </ol></div></section>
   </main>
+  <script src="/payment/payment-request.js" defer></script>
   <script src="/site-footer.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+name: Validate payment request form and six plan links
+on:
+  push:
+    branches: [main, fix-payment-request-web-form-20261013]
+    paths:
+      - "payment/**"
+      - "scripts/validate-payment-form.mjs"
+      - ".github/workflows/validate-payment-form.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify payment request JavaScript syntax
+        run: node --check payment/payment-request.js
+      - name: Validate form submission structure and plan links
+        run: node scripts/validate-payment-form.mjs
