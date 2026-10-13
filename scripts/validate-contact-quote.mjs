@@ -13,12 +13,12 @@ for(const id of ['dental','salon','restaurant','retail','professional','educatio
 for(const key of ['dental','salon','restaurant','retail','professional','education','travel','technology'])assert(templates.includes(key+':'),'Gallery filter missing '+key);
 assert(css.includes('.hero-effects a')&&css.includes('.industry-strip a'),'Clickable chip styles missing');
 
-assert(home.includes('Turn visitors into <span class="gradient-text">real customers.</span>'),'Requested hero headline missing');
-assert(home.includes('Make your next business conversation count.'),'Clear hero subheadline missing');
-assert(home.includes('class="hero-photo"')&&home.includes('Illustrative stock photo. Not a customer testimonial.'),'Hero needs a clearly described business photo without false endorsements');
+assert(home.includes('Turn Visitors into <span class="gradient-text">Real Customers.</span>'),'Requested hero headline missing');
+assert(home.includes('Professional websites. Helpful AI receptionists.'),'Clear hero subheadline missing');
+assert(home.includes('class="hero-illustration"')&&home.includes('Illustrative concept. Website examples are demos, not real customer endorsements.'),'Showcase must label visual industry examples as illustrative');
 for(const item of ['60 website demo designs','Published service pricing','Written quotes by email'])assert(home.includes(item),'Verifiable hero trust point missing: '+item);
-assert(home.includes('Get your free written quote')&&home.includes('Explore 60 website demos'),'Hero CTAs should provide clear next steps');
-assert(css.includes('.hero-top{display:grid')&&css.includes('@media(max-width:740px)'), 'Hero responsive photo layout missing');
+assert(home.includes('Get Your Free Quote')&&home.includes('Explore Website Demos'),'Hero CTAs should provide clear next steps');
+assert(css.includes('.hero-top-showcase{display:grid')&&css.includes('.hero-illustration{position:relative')&&css.includes('@media(max-width:740px)'), 'Responsive robot hero scene layout missing');
 const artJs=read('hero-poster.js');
 assert(home.includes('src="/hero-ai-suraj-design.webp"'),'The supplied screenshot asset path must be configured');
 assert(home.includes('id="hero-poster" hidden') && artJs.includes('image.addEventListener("error"'),'Missing safe fallback when promotional image has not been uploaded');
@@ -26,6 +26,12 @@ assert(home.includes('class="hero-poster-hit hero-poster-hit-quote"')&&home.incl
 assert(home.includes('projected results are not verified customers, testimonials or performance guarantees'),'Promotional design must disclose illustrative examples');
 assert(css.includes('.hero-poster-verified')&&css.includes('.hero-poster-hit-quote')&&css.includes('.hero.hero-poster-loaded'),'Accessible verified label, working hitboxes and responsive banner styles missing');
 new vm.Script(artJs);
+assert(home.includes('class="hero-robot-figure"')&&home.includes('src="/robot-logo.svg"'),'Robot brand illustration missing');
+assert(home.includes('class="hero-website-preview"'),'Business website device preview missing');
+assert.equal((home.match(/class="hero-industry-card hero-industry-/g)||[]).length,5,'Five clickable business photo cards required');
+assert(home.includes('class="hero-benefit-grid"')&&home.includes('class="hero-checkpoints"'),'Benefits and trust points missing');
+assert(css.includes('.hero-industry-cards{position:absolute')&&css.includes('.hero-robot-figure{position:absolute'),'Hero mockups must be styled');
+
 
 
 assert(contact.includes('name="website-quote-request"')&&contact.includes('data-netlify="true"')&&contact.includes('name="form-name" value="website-quote-request"'),'Native Netlify form missing');
