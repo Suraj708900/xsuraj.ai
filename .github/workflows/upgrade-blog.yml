@@ -1,0 +1,27 @@
+name: Upgrade 100 blog articles with photos
+on:
+  push:
+    branches: [premium-blog-photos-20261013]
+    paths: ['scripts/upgrade_blog.py', '.github/workflows/upgrade-blog.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update and validate articles
+        run: python scripts/upgrade_blog.py
+      - name: Commit 100 article photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/
+          if ! git diff --cached --quiet; then
+            git commit -m "Add photos and original robot logo to all 100 blog posts"
+            git push origin HEAD:premium-blog-photos-20261013
+          fi
