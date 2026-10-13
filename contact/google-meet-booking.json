@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "google_meet_booking_url": null,
+  "notes": "Paste only your actual PUBLIC Google Calendar appointment scheduling URL here (calendar.google.com/calendar/appointments/schedules/... or calendar.app.google/...). Never paste a random Google Meet room URL or an invite intended for one customer. Null keeps safe request-form fallback."
+}
