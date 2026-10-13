@@ -68,11 +68,11 @@
               <input id="quote-business" name="business" type="text" autocomplete="organization" maxlength="150" placeholder="Your company or business name">
             </div>
             <div class="contact-field">
-              <label for="quote-message">Project details <span aria-hidden="true">*</span></label>
+              <label for="quote-address">Business / contact address (optional)</label><textarea id="quote-address" name="address" autocomplete="street-address" rows="3" maxlength="500" placeholder="Street, city, state, postal code and country"></textarea></div><div class="contact-field"><label for="quote-message">Project details <span aria-hidden="true">*</span></label>
               <textarea id="quote-message" name="message" maxlength="2000" rows="5" placeholder="Your business type, services needed, city/country, features and preferred plan" required></textarea>
             </div>
             <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="agreed" required><span>I agree to be contacted about my request. See the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
-            <p class="contact-warning">Do not include passwords, bank details, card numbers, or patient/medical information.</p>
+            
             <button class="contact-submit" type="submit">Send my quote request <span aria-hidden="true">↗</span></button>
             <p class="contact-small">Website form delivery requires Netlify Forms to be enabled on the deployed site. If the form doesn't submit, use Gmail or Outlook on the right instead.</p>
           </form>
@@ -85,7 +85,7 @@
           <a id="quote-outlook-link" class="contact-outlink" href="https://outlook.live.com/mail/0/deeplink/compose?to=kamdevsuraj03%40gmail.com&amp;subject=Quote%20request%20-%20AI%20Suraj%20Teach" target="_blank" rel="noopener noreferrer">Open Outlook <span aria-hidden="true">↗</span></a>
           <section class="google-connect" aria-labelledby="google-connect-title">
             <p class="contact-kicker">GOOGLE CHAT &amp; GOOGLE MEET</p>
-            <h3 id="google-connect-title">Talk to our team</h3>
+            <h3 id="google-connect-title">Talk to our team</h3><a class="contact-outlink" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer"><img src="/google-calendar-icon.svg" width="24" height="24" alt=""> Open Google Calendar ↗</a><a class="contact-outlink" href="https://chat.google.com/" target="_blank" rel="noopener noreferrer"><img src="/google-chat-icon.svg" width="24" height="24" alt=""> Open Google Chat ↗</a>
             <p>Request a video consultation or ask for a Google Chat invitation. We will confirm the next steps by email.</p>
             <a class="contact-outlink google-meet-link" href="/contact/?service=meet#quote-form">📹 Request Google Meet appointment <span aria-hidden="true">↗</span></a>
             <a class="contact-outlink google-chat-link" href="/contact/?service=chat#quote-form">💬 Request Google Chat support <span aria-hidden="true">↗</span></a>
