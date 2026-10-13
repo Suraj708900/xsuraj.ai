@@ -14,7 +14,9 @@
     quote: "General business quote",
     ai: "AI voice receptionist",
     website: "Business website design",
-    demo: "60-second demo request"
+    demo: "60-second demo request",
+    "google-chat": "Google Chat conversation request",
+    "google-meet": "Google Meet video meeting request"
   };
 
   try {
@@ -39,23 +41,26 @@
 
   function updateDrafts() {
     const type = service.value;
-    const subject = type === "demo" ? "Demo request - AI Suraj Teach"
+    const subject = type === "google-meet" ? "Google Meet meeting request - AI Suraj Teach"
+      : type === "google-chat" ? "Google Chat conversation request - AI Suraj Teach"
+      : type === "demo" ? "Demo request - AI Suraj Teach"
       : type === "ai" ? "Quote request - AI receptionist"
       : type === "website" ? "Quote request - business website"
       : "Quote request - AI Suraj Teach";
     const lines = [
       "Hello AI Suraj Teach,",
       "",
-      "I would like to request a quote or demo.",
+      "I would like to discuss my business requirements.",
       "Service: " + (allowedServices[type] || "Not yet selected"),
       "Name: " + field("quote-name"),
       "Email: " + field("quote-email"),
       "Business: " + field("quote-business"),
+      "Preferred meeting date/time and time zone: " + field("quote-preferred-time"),
       "",
       "My requirements:",
       field("quote-message"),
       "",
-      "Please reply with the next steps. Thank you."
+      type === "google-meet" ? "Please propose or confirm a Google Meet appointment. This is only a request, not a confirmed meeting." : type === "google-chat" ? "Please send a verified Google Chat invitation or link to continue this conversation." : "Please reply with the next steps. Thank you."
     ];
     const body = lines.join("\n");
     const gmailParams = new URLSearchParams({view:"cm",fs:"1",to:recipient,su:subject,body});
