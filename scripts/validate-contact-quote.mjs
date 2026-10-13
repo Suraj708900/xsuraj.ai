@@ -12,6 +12,14 @@ for(const id of ['feature-call-answering','feature-appointments','feature-faq'])
 for(const id of ['dental','salon','restaurant','retail','professional','education','travel','technology'])assert(home.includes('/templates/?industry='+id),'Industry chip missing '+id);
 for(const key of ['dental','salon','restaurant','retail','professional','education','travel','technology'])assert(templates.includes(key+':'),'Gallery filter missing '+key);
 assert(css.includes('.hero-effects a')&&css.includes('.industry-strip a'),'Clickable chip styles missing');
+
+assert(home.includes('Make a stronger <span class="gradient-text">first impression.</span>'),'Trust-led hero headline missing');
+assert(home.includes('Turn enquiries into conversations.'),'Customer-focused hero subheadline missing');
+assert(home.includes('class="hero-photo"')&&home.includes('Illustrative stock photo. Not a customer testimonial.'),'Hero needs a clearly described business photo without false endorsements');
+for(const item of ['60 website demo designs','Published service pricing','Written quotes by email'])assert(home.includes(item),'Verifiable hero trust point missing: '+item);
+assert(home.includes('Get your free written quote')&&home.includes('Explore 60 website demos'),'Hero CTAs should provide clear next steps');
+assert(css.includes('.hero-top{display:grid')&&css.includes('@media(max-width:740px)'), 'Hero responsive photo layout missing');
+
 assert(contact.includes('name="website-quote-request"')&&contact.includes('data-netlify="true"')&&contact.includes('name="form-name" value="website-quote-request"'),'Native Netlify form missing');
 assert(contact.includes('netlify-honeypot="bot-field"')&&contact.includes('name="bot-field"'),'Spam protection missing');
 assert(contact.includes('action="/contact/thanks/"'),'Contact confirmation missing');
