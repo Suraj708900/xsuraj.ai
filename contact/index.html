@@ -68,11 +68,15 @@
               </div>
             </div>
             <div class="contact-field">
-              <label for="quote-business">Business name (optional)</label>
-              <input id="quote-business" name="business" type="text" autocomplete="organization" maxlength="150" placeholder="Your company or business name">
+              <label for="quote-business">Business name <span aria-hidden="true">*</span></label>
+              <input id="quote-business" name="business" type="text" autocomplete="organization" maxlength="150" placeholder="Your company or business name" required>
             </div>
             <div class="contact-field">
-              <label for="quote-address">Business / contact address (optional)</label><textarea id="quote-address" name="address" autocomplete="street-address" rows="3" maxlength="500" placeholder="Street, city, state, postal code and country"></textarea></div><div class="contact-field"><label for="quote-message">Project details <span aria-hidden="true">*</span></label>
+              <label for="quote-address">Business / contact address <span aria-hidden="true">*</span></label>
+              <textarea id="quote-address" name="address" autocomplete="street-address" rows="3" maxlength="500" placeholder="Street, city, state, postal code and country" required></textarea>
+            </div>
+            <div class="contact-field">
+              <label for="quote-message">What does your business need? <span aria-hidden="true">*</span></label>
               <textarea id="quote-message" name="message" maxlength="2000" rows="5" placeholder="Your business type, services needed, city/country, features and preferred plan" required></textarea>
             </div>
             <label class="contact-consent"><input type="checkbox" name="privacy-consent" value="agreed" required><span>I agree to be contacted about my request. See the <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
