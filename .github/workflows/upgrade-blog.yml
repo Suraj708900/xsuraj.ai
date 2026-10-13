@@ -1,7 +1,7 @@
 name: Upgrade 100 blog articles with photos
 on:
   push:
-    branches: [premium-blog-photos-20261013]
+    branches: [main]
     paths: ['scripts/upgrade_blog.py', '.github/workflows/upgrade-blog.yml']
   workflow_dispatch:
 permissions:
@@ -23,5 +23,5 @@ jobs:
           git add blog/
           if ! git diff --cached --quiet; then
             git commit -m "Add photos and original robot logo to all 100 blog posts"
-            git push origin HEAD:premium-blog-photos-20261013
+            git push origin HEAD:main
           fi
