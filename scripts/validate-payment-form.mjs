@@ -56,4 +56,10 @@ select.value="voice-pro";events["select:change"]();
 assert(gmail.href.includes("voice%20pro"),"Changing plan should update Gmail subject");
 await events["copy:click"]();
 assert.equal(events.copied,"kamdevsuraj03@gmail.com","Copy-email action failed");
+
+for(const id of ['customer-business','customer-address','customer-message']){
+  const field=html.match(new RegExp('<(?:input|textarea)\\b[^>]*id="'+id+'"[^>]*>'));
+  assert(field && field[0].includes('required'),'Payment form must require '+id);
+}
+assert(!/Do not (?:submit|include) passwords/i.test(html),'Remove requested sensitive-data warning from payment form');
 console.log("PASS: 6 payment buttons navigate to native Netlify Form, preselect plan, secure browser-email alternatives and clipboard fallback.");
