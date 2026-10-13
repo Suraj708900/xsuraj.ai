@@ -57,3 +57,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .contact-info p{font-size:.83rem;color:#c5d1ea;margin:6px 0 0}
 @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-hero{padding:57px 0 40px}.contact-main{padding-bottom:60px}.contact-header{padding:12px 19px}}
 @media(max-width:560px){.contact-fields-two{grid-template-columns:1fr;gap:0}.contact-header nav{gap:10px}.contact-header nav a{font-size:.75rem}.contact-brand{font-size:.95rem}.contact-brand img{width:32px;height:36px}.contact-hero{padding:42px 0 29px}.contact-wrap{padding-inline:16px}.contact-card,.contact-aside{border-radius:16px}.contact-aside{padding:23px}}
+
+
+/* Google Chat & Meet: premium, actionable contact options */
+.google-contact-options{margin:0 0 29px}
+.google-contact-heading{margin:0 0 21px}
+.google-contact-heading h2{font-size:clamp(25px,3.5vw,35px);line-height:1.16;letter-spacing:-.04em;margin:0 0 10px}
+.google-contact-heading>p:not(.contact-kicker){max-width:800px;margin:0;color:#c8d3ee;font-size:.92rem;line-height:1.75}
+.google-contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.google-contact-card{background:linear-gradient(130deg,#17274a,#151b37 68%,#1b1a3c);border:1px solid #52669a;border-radius:21px;padding:clamp(21px,3vw,29px);box-shadow:0 16px 44px #0003}
+.google-contact-symbol{display:grid;place-items:center;border:1px solid #6974c5;border-radius:15px;background:linear-gradient(130deg,#304878,#513591);color:#fff;width:53px;height:53px;font-size:27px;margin-bottom:17px}
+.google-contact-card h3{font-size:1.37rem;margin:0 0 9px;line-height:1.3;color:#fff}
+.google-contact-card>p{font-size:.9rem;line-height:1.7;color:#d0daf0;margin:0 0 17px}
+.google-contact-action{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 19px;border-radius:999px;background:linear-gradient(100deg,#4374e7,#8255dd);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 6px 20px #5555bd4a}
+.google-contact-action:hover{filter:brightness(1.13);color:#fff}
+.google-contact-card .google-contact-status{margin:13px 0 0;font-size:.77rem;color:#b2c5e5}
+.google-contact-action:focus-visible{outline:3px solid #d0c2ff;outline-offset:4px}
+@media(max-width:650px){.google-contact-grid{grid-template-columns:1fr}.google-contact-card{border-radius:17px}.google-contact-heading{margin-bottom:15px}}
