@@ -1,0 +1,41 @@
+/* Standalone payment request form, works in all modern browsers. */
+.payment-request-section{padding:70px 20px 86px;background:radial-gradient(ellipse at 90% 13%,#34245f66,transparent 52%),#0b1429;scroll-margin-top:20px}
+.payment-request-intro{max-width:770px;margin:0 0 27px}
+.payment-request-intro h2{font-size:clamp(29px,4vw,44px);line-height:1.1;letter-spacing:-.045em;margin:12px 0 15px}
+.payment-request-intro>p{line-height:1.8;color:#d1d8f0;font-size:.99rem}
+.payment-request-intro strong{color:#fff}
+.payment-request-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.9fr);gap:21px;align-items:start}
+.payment-request-card,.payment-contact-options{background:linear-gradient(140deg,#15234a,#101a36 70%,#151c3b);border:1px solid #5064a4;border-radius:21px;box-shadow:0 22px 55px #0004}
+.payment-request-card{padding:clamp(20px,3.5vw,34px)}
+.payment-field{margin-bottom:17px}
+.payment-field label{display:block;color:#f0f3ff;font-size:.85rem;font-weight:750;margin-bottom:8px}
+.payment-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.payment-field input,.payment-field select,.payment-field textarea{width:100%;min-width:0;min-height:47px;border:1px solid #6475a5;border-radius:11px;background:#0a1533;color:#fff;font:inherit;font-size:.95rem;padding:12px 13px;outline-offset:3px}
+.payment-field select{cursor:pointer}
+.payment-field textarea{resize:vertical;min-height:115px}
+.payment-field input::placeholder,.payment-field textarea::placeholder{color:#94a6cc}
+.payment-field input:focus,.payment-field select:focus,.payment-field textarea:focus{border-color:#ac9cff;outline:2px solid #a79df2}
+.payment-selected{color:#c4c9ff;background:#1f2b51;border:1px solid #4b5a8d;border-radius:10px;padding:10px 13px;margin:-3px 0 20px;font-size:.8rem}
+.payment-agreement{display:flex;gap:11px;align-items:start;color:#d2daf0;font-size:.81rem;line-height:1.65;cursor:pointer}
+.payment-agreement input{width:18px;height:18px;flex:0 0 18px;accent-color:#8764ef;margin:3px 0 0}
+.payment-agreement a{color:#c2bbff;text-decoration:underline}
+.payment-data-note{color:#e8cbb6;font-size:.79rem;margin:13px 0 17px}
+.payment-form-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;min-height:49px;background:linear-gradient(95deg,#3272ff,#8955f5);border-radius:999px;color:white;cursor:pointer;padding:12px 22px;font:800 .92rem/1.35 system-ui,sans-serif;box-shadow:0 7px 24px #5d50dd55}
+.payment-form-submit:hover{filter:brightness(1.1)}
+.payment-form-note{font-size:.76rem;color:#aebee0;line-height:1.7;margin:14px 0 0}
+.payment-contact-options{padding:30px}
+.payment-contact-options h3{font-size:1.65rem;letter-spacing:-.04em;margin:12px 0 8px;color:#fff}
+.payment-contact-options>p{color:#bcc9e8;font-size:.9rem;line-height:1.7}
+.payment-contact-options a.payment-contact-link{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:11px 15px;text-decoration:none;font-weight:750;font-size:.9rem;color:#fff;background:#243562;border:1px solid #5b72a8;border-radius:11px;margin-top:11px}
+.payment-contact-options a.payment-contact-link:hover{background:#33477b}
+.payment-copy-title{margin:26px 0 9px!important;font-size:.85rem}
+.payment-copy-row{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0a1531;border:1px solid #4c5b8b;border-radius:10px;padding:9px}
+.payment-copy-row span{overflow-wrap:anywhere;color:#e2e7ff;font-size:.84rem;padding-left:5px}
+.payment-copy-row button{border:1px solid #776be4;color:#fff;background:#38318e;border-radius:8px;font-size:.8rem;font-weight:750;cursor:pointer;padding:9px 11px}
+#copy-payment-result{min-height:16px;font-size:.77rem;margin:5px 0 0;color:#c8f8d7}
+.payment-security-reminder{padding:17px;border-left:3px solid #9082ef;border-radius:9px;background:#0d1936;margin-top:28px}
+.payment-security-reminder strong{color:#fff}
+.payment-security-reminder p{color:#c7d3e9;font-size:.84rem;line-height:1.65;margin:5px 0 0}
+.payment-request-card a:focus-visible,.payment-contact-options a:focus-visible,.payment-copy-row button:focus-visible,.payment-form-submit:focus-visible{outline:3px solid #e2cd79;outline-offset:3px}
+@media(max-width:870px){.payment-request-layout{grid-template-columns:1fr}}
+@media(max-width:590px){.payment-request-section{padding:55px 14px 70px}.payment-field-grid{grid-template-columns:1fr;gap:0}.payment-request-card,.payment-contact-options{padding:21px}}
