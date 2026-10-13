@@ -39,6 +39,7 @@
           <p class="contact-intro">We will review your details and reply to the email address you provide. All fields marked * are required.</p>
           <form id="quote-request-form" name="website-quote-request" action="/contact/thanks/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="website-quote-request">
+            <input type="hidden" name="subject" value="New AI Suraj Teach enquiry - %{formName} (#%{submissionId})">
             <p class="contact-honeypot"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <div class="contact-field">
               <label for="quote-service">What do you need? <span aria-hidden="true">*</span></label>
