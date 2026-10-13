@@ -15,6 +15,17 @@ assert(css.includes('.hero-effects a')&&css.includes('.industry-strip a'),'Click
 assert(contact.includes('name="website-quote-request"')&&contact.includes('data-netlify="true"')&&contact.includes('name="form-name" value="website-quote-request"'),'Native Netlify form missing');
 assert(contact.includes('netlify-honeypot="bot-field"')&&contact.includes('name="bot-field"'),'Spam protection missing');
 assert(contact.includes('action="/contact/thanks/"'),'Contact confirmation missing');
+const payment=read('payment/index.html');
+const subject='<input type="hidden" name="subject" value="New AI Suraj Teach enquiry - %{formName} (#%{submissionId})">';
+assert(contact.includes(subject),'Quote form should attach a clear subject for Netlify notification emails');
+assert(payment.includes(subject),'Payment request form should attach a clear subject for Netlify notification emails');
+const quoteInputs=['name="service"','name="name"','name="email"','name="business"','name="message"'];
+for(const field of quoteInputs)assert(contact.includes(field),'Quote lead email would miss '+field);
+assert(payment.includes('name="secure-payment-request"')&&payment.includes('data-netlify="true"'),'Payment request Netlify form missing');
+for(const field of ['name="requested-plan"','name="customer-name"','name="customer-email"','name="customer-business"','name="customer-message"'])assert(payment.includes(field),'Payment lead email would miss '+field);
+assert(existsSync('contact/NETLIFY-LEAD-EMAIL-SETUP.md'),'Human dashboard activation instructions missing');
+const setup=read('contact/NETLIFY-LEAD-EMAIL-SETUP.md');
+assert(setup.includes('kamdevsuraj03@gmail.com')&&setup.includes('Forms > Submission notifications > Add notification'),'Email setup instructions incomplete');
 for(const name of ['name="email"','name="message"','name="service"','name="privacy-consent"'])assert(contact.includes(name),'Missing form field '+name);
 assert(contact.includes('id="quote-gmail-link"')&&contact.includes('id="quote-outlook-link"'),'Browser compose fallbacks missing');
 new vm.Script(js);
