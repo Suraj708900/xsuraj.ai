@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "google_chat_url": null,
+  "google_meet_booking_url": null,
+  "note": "Only insert links copied from YOUR verified Google Chat space or contact invitation and Google Calendar appointment schedule. Do not add a Meet room join URL as a booking URL. Null links display working enquiry forms instead."
+}
